@@ -1,0 +1,440 @@
+Test_id;Fault_Type;Target_Component;Target_Class;Target_Function;Fault_Location;Line
+Test_1;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/manager.py;ComputeManager;do_attach_volume;do_attach_volume(context, instance, driver_bdm);4920
+Test_2;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;cleanup;self._disconnect_volume(connection_info, disk_dev, instance);1013
+Test_3;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/compute/api.py;API;_check_requested_networks;return self.network_api.validate_networks(context, requested_networks, max_count);402
+Test_4;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/network/neutronv2/api.py;API;_validate_requested_network_ids;return {net['id'];749
+Test_5;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/network/neutronv2/api.py;API;_get_available_networks;return nets;368
+Test_6;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/network/neutronv2/api.py;API;validate_networks;return num_instances;1720
+Test_7;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._check_discard_for_attach_volume(conf, instance);1275
+Test_8;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/api/openstack/common.py;None;get_networks_for_instance;return get_networks_for_instance_from_nw_info(nw_info);326
+Test_9;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/api/openstack/common.py;None;get_networks_for_instance_from_nw_info;return networks;303
+Test_10;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/api/openstack/compute/servers.py;ServersController;_get_requested_networks;return objects.NetworkRequestList(objects=networks);434
+Test_11;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/virt/netutils.py;None;get_network_metadata;return {'links';219
+Test_12;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/virt/netutils.py;None;_get_first_network;return next((i for i in network['subnets'] if (i['version'] == version)));53
+Test_13;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/virt/osinfo.py;HardwareProperties;network_model;return ('virtio' if (model == 'virtio-net') else model);130
+Test_14;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/virt/libvirt/driver.py;LibvirtDriver;_create_domain_and_network;return guest;5457
+Test_15;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/objects/instance.py;Instance;get_network_info;return self.info_cache.network_info;1173
+Test_16;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/api.py;API;create_db_entry_for_new_instance;self._populate_instance_for_create(context, instance, image, index, security_group, instance_type, num_instances, shutdown_terminate);1565
+Test_17;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_ephemeral_devices;self._connect_volume(connection_info, info, instance);3936
+Test_18;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_do_build_and_run_instance;self._build_and_run_instance(context, instance, image, decoded_files, admin_password, requested_networks, security_groups, block_device_mapping, node, limits, filter_properties);1852
+Test_19;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._notify_about_instance_usage(context, instance, 'create.start', extra_usage_info={'image_name';1975
+Test_20;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_block_device_names;self._default_device_names_for_instance(instance, root_device_name, ephemerals, swap, block_device_mapping);1555
+Test_21;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_device_names_for_instance;self.driver.default_device_names_for_instance(instance, root_device_name, *block_device_lists);1497
+Test_22;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/api.py;API;_check_attach_and_reserve_volume;self.volume_api.reserve_volume(context, volume_id);3692
+Test_23;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_notify_about_instance_usage;compute_utils.notify_about_instance_usage(self.notifier, context, instance, event_suffix, network_info=network_info, system_metadata=system_metadata, extra_usage_info=extra_usage_info, fault=fault);1663
+Test_24;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;compute_utils.notify_about_instance_create(context, instance, self.host, phase=fields.NotificationPhase.START);1977
+Test_25;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/api.py;API;delete;self._delete_instance(context, instance);2171
+Test_26;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/api.py;API;_attach_volume;self._check_attach_and_reserve_volume(context, volume_id, instance);3707
+Test_27;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/api.py;API;_attach_volume;self.compute_rpcapi.attach_volume(context, instance, volume_bdm);3708
+Test_28;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;reboot_instance;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.REBOOT, phase=fields.NotificationPhase.START);3085
+Test_29;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._update_scheduler_instance_info(context, instance);2128
+Test_30;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_connect_volume;vol_driver.connect_volume(connection_info, disk_info, instance);1191
+Test_31;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/scheduler/client/__init__.py;SchedulerClient;update_instance_info;self.queryclient.update_instance_info(context, host_name, instance_info);71
+Test_32;DISKIO_MISSING_FUNCTION_CALL-OPEN;/nova/virt/libvirt/host.py;Host;get_memory_mb_used;with open('/proc/meminfo') as fp:\n    m = fp.read().split();787
+Test_33;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_connect_volume;vol_driver.connect_volume(connection_info, disk_info, instance);1191
+Test_34;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_disconnect_volume;vol_driver.disconnect_volume(connection_info, disk_dev, instance);1195
+Test_35;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/block_device.py;BlockDeviceDict;_validate;validate_and_default_volume_size(bdm_dict);121
+Test_36;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/block_device.py;DriverVolumeBlockDevice;attach;virt_driver.attach_volume(context, connection_info, instance, self['mount_device'], disk_bus=self['disk_bus'], device_type=self['device_type'], encryption=encryption);390
+Test_37;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/volume/iscsi.py;LibvirtISCSIVolumeDriver;disconnect_volume;super(LibvirtISCSIVolumeDriver, self).disconnect_volume(connection_info, disk_dev, instance);79
+Test_38;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/volume/iscsi.py;LibvirtISCSIVolumeDriver;disconnect_volume;self.connector.disconnect_volume(connection_info['data'], None);73
+Test_39;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/manager.py;ComputeManager;_delete_instance;self._cleanup_volumes(context, instance, bdms, raise_exc=False, detach=False);2467
+Test_40;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._connect_volume(connection_info, disk_info, instance);1269
+Test_41;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;cleanup;self._disconnect_volume(connection_info, disk_dev, instance);1013
+Test_42;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._check_discard_for_attach_volume(conf, instance);1275
+Test_43;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_ephemeral_devices;self._connect_volume(connection_info, info, instance);3936
+Test_44;OPENSTACK_THROW_EXCEPTION-VOLUME;/nova/compute/api.py;API;_attach_volume;self._check_attach_and_reserve_volume(context, volume_id, instance);3707
+Test_45;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/manager.py;ComputeManager;_attach_volume;compute_utils.notify_about_volume_attach_detach(context, instance, self.host, action=fields.NotificationAction.VOLUME_ATTACH, phase=fields.NotificationPhase.END, volume_id=bdm.volume_id);4954
+Test_46;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/compute/manager.py;ComputeManager;_attach_volume;compute_utils.notify_about_volume_attach_detach(context, instance, self.host, action=fields.NotificationAction.VOLUME_ATTACH, phase=fields.NotificationPhase.START, volume_id=bdm.volume_id);4928
+Test_47;OPENSTACK_MISSING_PARAMETERS-IMAGE;/nova/virt/libvirt/driver.py;LibvirtDriver;_create_images_and_backing;self._try_fetch_image_cache(disk, libvirt_utils.fetch_image, context, cache_name, instance.image_ref, instance, info['virt_disk_size'], fallback_from_host);7225
+Test_48;OPENSTACK_MISSING_PARAMETERS-IMAGE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._image_meta_from_image(image);416
+Test_49;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_disconnect_volume;vol_driver.disconnect_volume(connection_info, disk_dev, instance);1195
+Test_50;OPENSTACK_MISSING_PARAMETERS-IMAGE;/nova/compute/api.py;API;_checks_for_create_and_rebuild;self._check_requested_image(context, image_id, image, instance_type, root_bdm);750
+Test_51;OPENSTACK_WRONG_PARAMETERS-SSH;/nova/crypto.py;None;generate_fingerprint;serialization.load_ssh_public_key(pub_bytes, backends.default_backend());100
+Test_52;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/nova/notifications/objects/instance.py;IpPayload;from_network_info;return ips;286
+Test_53;NETIO_MISSING_FUNCTION_CALL-CLOSE;/nova/virt/libvirt/driver.py;LibvirtDriver;_supports_direct_io;os.close(fd);3104
+Test_54;NETIO_MISSING_FUNCTION_CALL-CLOSE;/nova/virt/libvirt/driver.py;LibvirtDriver;_ensure_console_log_for_instance;libvirt_utils.file_open(console_file, 'a').close();3167
+Test_55;NETIO_MISSING_FUNCTION_CALL-CLOSE;/nova/image/glance.py;GlanceImageServiceV2;download;data.close();381
+Test_56;NETIO_MISSING_FUNCTION_CALL-CLOSE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_compute_node_fetchall;conn.close();668
+Test_57;NETIO_MISSING_FUNCTION_CALL-SEND;/nova/compute/manager.py;ComputeManager;_process_instance_event;_event.send(event);6982
+Test_58;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_tag_get_by_instance_uuid;return context.session.query(models.Tag).filter_by(resource_id=instance_uuid).all();6928
+Test_59;OPENSTACK_MISSING_PARAMETERS-IMAGE;/nova/virt/libvirt/driver.py;LibvirtDriver;_hard_reboot;self._create_images_and_backing(context, instance, instance_dir, backing_disk_info);2605
+Test_60;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/api.py;API;_create_instance;self.compute_task_api.schedule_and_build_instances(context, build_requests=build_requests, request_spec=request_specs, image=boot_meta, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, block_device_mapping=block_device_mapping, tags=tags);1170
+Test_61;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/conductor/api.py;ComputeTaskAPI;schedule_and_build_instances;self.conductor_compute_rpcapi.schedule_and_build_instances(context, build_requests, request_spec, image, admin_password, injected_files, requested_networks, block_device_mapping, tags);130
+Test_62;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;objects.BuildRequest.get_by_instance_uuid(context, instance.uuid);1109
+Test_63;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;self.compute_rpcapi.build_and_run_instance(cctxt, instance=instance, image=image, request_spec=request_spec, filter_properties=filter_props, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, security_groups=legacy_secgroups, block_device_mapping=instance_bdms, host=host['host'], node=host['nodename'], limits=host['limits']);1201
+Test_64;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_extra_update_by_uuid;return rows_updated;2926
+Test_65;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;compute_utils.check_num_instances_quota(context, instance.flavor, 0, 0, orig_num_req=len(build_requests));1136
+Test_66;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;_schedule_instances;scheduler_utils.setup_instance_group(context, request_spec);633
+Test_67;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_available_resource;self._pair_instances_to_migrations(migrations, instances);751
+Test_68;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instance;self.pci_tracker.update_pci_for_instance(context, instance, sign=sign);1085
+Test_69;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self._remove_deleted_instances_allocations(context, cn);1203
+Test_70;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self._update_usage_from_instance(context, instance, nodename, require_allocation_refresh=require_allocation_refresh);1200
+Test_71;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_available_resource;self._update_usage_from_instances(context, instances, nodename);745
+Test_72;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;instance_claim;self.pci_tracker.claim_instance(context, pci_requests, instance_numa_topology);221
+Test_73;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_metadata_get_multi;return [];5304
+Test_74;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;update_usage;self._update_usage_from_instance(context, instance, nodename);512
+Test_75;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;instance_claim;self._update_usage_from_instance(context, instance, nodename);225
+Test_76;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/api.py;API;external_instance_event;self.compute_rpcapi.external_instance_event(cell_context, instances_by_host[host], events_by_host[host], host=host);4295
+Test_77;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/api.py;API;_hard_reboot;self.compute_rpcapi.reboot_instance(context, instance=instance, block_device_info=None, reboot_type='HARD');2969
+Test_78;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/compute/api.py;API;_populate_instance_for_create;self._populate_instance_names(instance, num_instances);1513
+Test_79;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/volume/cinder.py;None;_untranslate_volume_summary_view;return d;194
+Test_80;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/virt/block_device.py;DriverBlankBlockDevice;convert_volume;return convert_all_volumes(volume_bdm)[0];595
+Test_81;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/virt/block_device.py;DriverBlankBlockDevice;convert_all_volumes;return [vol for vol in itertools.chain(source_volume, source_snapshot, source_image, source_blank)];588
+Test_82;OS_MISSING_FUNCTION_CALL-OS;/nova/image/glance.py;GlanceImageServiceV2;download;os.fsync(data.fileno());380
+Test_83;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/nova/virt/libvirt/imagebackend.py;Image;fetch_func_sync;self.resize_image(size);247
+Test_84;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/nova/virt/libvirt/driver.py;LibvirtDriver;_create_images_and_backing;self._try_fetch_image_cache(disk, libvirt_utils.fetch_image, context, cache_name, instance.image_ref, instance, info['virt_disk_size'], fallback_from_host);7225
+Test_85;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/nova/virt/libvirt/driver.py;LibvirtDriver;_hard_reboot;self._create_images_and_backing(context, instance, instance_dir, backing_disk_info);2605
+Test_86;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._image_meta_from_image(image);416
+Test_87;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/nova/compute/api.py;API;_checks_for_create_and_rebuild;self._check_requested_image(context, image_id, image, instance_type, root_bdm);750
+Test_88;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/block_device.py;BlockDeviceDict;volume_in_mapping;return (strip_dev(mount_device) in block_device_list);586
+Test_89;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_volume_driver;return self.volume_drivers[driver_type];1187
+Test_90;OPENSTACK_THROW_EXCEPTION-IMAGE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._image_meta_from_image(image);416
+Test_91;OPENSTACK_THROW_EXCEPTION-IMAGE;/nova/compute/api.py;API;_checks_for_create_and_rebuild;self._check_requested_image(context, image_id, image, instance_type, root_bdm);750
+Test_92;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_volume_config;return conf;1205
+Test_93;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;_schedule_instances;return hosts;636
+Test_94;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;get_volume_connector;return connector.get_connector_properties(root_helper, CONF.my_block_storage_ip, CONF.libvirt.volume_use_multipath, enforce_multipath=True, host=CONF.host);1140
+Test_95;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/objects/block_device.py;BlockDeviceMapping;is_volume;return (self.destination_type == fields.BlockDeviceDestinationType.VOLUME);269
+Test_96;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/conductor/manager.py;ComputeTaskManager;_volume_size;return size;958
+Test_97;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/compute/api.py;API;_volume_size;return size;1218
+Test_98;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/compute/api.py;API;_attach_volume;return volume_bdm.device_name;3713
+Test_99;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/compute/api.py;API;_may_have_ports_or_volumes;return False;1970
+Test_100;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/compute/api.py;API;_check_attach_and_reserve_volume;return volume;3694
+Test_101;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/compute/api.py;API;attach_volume;return self._attach_volume(context, instance, volume_id, device, disk_bus, device_type, tag=tag);3774
+Test_102;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/nova/compute/api.py;API;_create_volume_bdm;return volume_bdm;3686
+Test_103;OPENSTACK_MISSING_PARAMETERS-SSH;/nova/crypto.py;None;generate_fingerprint;serialization.load_ssh_public_key(pub_bytes, backends.default_backend());100
+Test_104;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_extra_get_by_instance_uuid;return instance_extra;2940
+Test_105;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/network/neutronv2/api.py;API;deallocate_for_instance;objects.VirtualInterface.delete_by_instance_uuid(context, instance.uuid);1207
+Test_106;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/network/neutronv2/api.py;API;deallocate_for_instance;base_api.update_instance_cache_with_nw_info(self, context, instance, network_model.NetworkInfo([]));1214
+Test_107;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;_get_servers;req.cache_db_instances(instance_list);326
+Test_108;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;create;req.cache_db_instances(instances);637
+Test_109;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;_get_server;req.cache_db_instance(instance);347
+Test_110;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._from_instance_pci_requests(pci_requests);418
+Test_111;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._from_instance_numa_topology(numa_topology);419
+Test_112;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;unfilter_instance;self.firewall_driver.unfilter_instance(instance, network_info=network_info);7519
+Test_113;OPENSTACK_WRONG_PARAMETERS-NETWORK;/nova/network/neutronv2/api.py;API;_get_available_networks;_ensure_requested_network_ordering((lambda x;363
+Test_114;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/objects/build_request.py;BuildRequest;_from_db_object;req._load_instance(db_req['instance']);162
+Test_115;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/objects/instance.py;Instance;_handle_cell_update_from_api;db.instance_extra_update_by_uuid(context, self.uuid, self._extra_values_to_save);749
+Test_116;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;cleanup;self.unfilter_instance(instance, network_info);945
+Test_117;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_get_sec_group_models;ec2_instance_create(context, instance_ref['uuid']);1830
+Test_118;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_tag_get_by_instance_uuid;_check_instance_exists_in_project(context, instance_uuid);6927
+Test_119;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_update;_instance_metadata_update_in_place(context, instance_ref, 'system_metadata', models.InstanceSystemMetadata, system_metadata);2811
+Test_120;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/conductor/api.py;ComputeTaskAPI;schedule_and_build_instances;self.conductor_compute_rpcapi.schedule_and_build_instances(context, build_requests, request_spec, image, admin_password, injected_files, requested_networks, block_device_mapping, tags);130
+Test_121;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;compute_utils.check_num_instances_quota(context, instance.flavor, 0, 0, orig_num_req=len(build_requests));1136
+Test_122;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;self.compute_rpcapi.build_and_run_instance(cctxt, instance=instance, image=image, request_spec=request_spec, filter_properties=filter_props, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, security_groups=legacy_secgroups, block_device_mapping=instance_bdms, host=host['host'], node=host['nodename'], limits=host['limits']);1201
+Test_123;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;_schedule_instances;scheduler_utils.setup_instance_group(context, request_spec);633
+Test_124;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;objects.BuildRequest.get_by_instance_uuid(context, instance.uuid);1109
+Test_125;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self._update_usage_from_instance(context, instance, nodename, require_allocation_refresh=require_allocation_refresh);1200
+Test_126;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;update_usage;self._update_usage_from_instance(context, instance, nodename);512
+Test_127;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self._remove_deleted_instances_allocations(context, cn);1203
+Test_128;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_available_resource;self._pair_instances_to_migrations(migrations, instances);751
+Test_129;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_available_resource;self._update_usage_from_instances(context, instances, nodename);745
+Test_130;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/quota.py;QuotaEngine;_instances_cores_ram_count;return total_counts;1903
+Test_131;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/utils.py;UndoManager;instance_sys_meta;return instance['system_metadata'];866
+Test_132;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/utils.py;UndoManager;instance_sys_meta;return metadata_to_dict(instance['system_metadata'], include_deleted=True);868
+Test_133;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/notifications/objects/instance.py;BlockDevicePayload;from_instance;return None;352
+Test_134;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/consoleauth/manager.py;ConsoleAuthManager;mc_instance;return self._mc_instance;61
+Test_135;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/consoleauth/manager.py;ConsoleAuthManager;_get_tokens_for_instance;return tokens;74
+Test_136;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/utils.py;None;check_num_instances_quota;return max_count;816
+Test_137;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/consoleauth/rpcapi.py;ConsoleAuthAPI;delete_tokens_for_instance;return cctxt.cast(ctxt, 'delete_tokens_for_instance', instance_uuid=instance_uuid);101
+Test_138;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/availability_zones.py;None;get_instance_availability_zone;return az;196
+Test_139;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/availability_zones.py;None;get_instance_availability_zone;return az;173
+Test_140;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/block_device.py;BlockDeviceDict;instance_block_mapping;return mappings;559
+Test_141;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/network/security_group/neutron_driver.py;SecurityGroupAPI;get_instances_security_groups_bindings;return instances_security_group_bindings;405
+Test_142;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/network/security_group/neutron_driver.py;SecurityGroupAPI;get_instance_security_groups;return sg_bindings.get(instance.uuid, []);415
+Test_143;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/metadata/handler.py;MetadataRequestHandler;_handle_instance_id_request;return self._get_meta_by_instance_id(instance_id, tenant_id, remote_address);177
+Test_144;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;_get_instance_map_or_none;return inst_map;2267
+Test_145;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/utils.py;UndoManager;instance_meta;return instance['metadata'];857
+Test_146;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/utils.py;UndoManager;instance_meta;return metadata_to_dict(instance['metadata']);859
+Test_147;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/utils.py;UndoManager;instance_sys_meta;return {};864
+Test_148;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;compute_utils.notify_about_instance_create(context, instance, self.host, phase=fields.NotificationPhase.START);1977
+Test_149;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.DELETE, phase=fields.NotificationPhase.END);760
+Test_150;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._update_instance_after_spawn(context, instance);2115
+Test_151;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;_get_instance;return instance;2312
+Test_152;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._notify_about_instance_usage(context, instance, 'create.start', extra_usage_info={'image_name';1975
+Test_153;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_do_build_and_run_instance;self._build_and_run_instance(context, instance, image, decoded_files, admin_password, requested_networks, security_groups, block_device_mapping, node, limits, filter_properties);1852
+Test_154;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_device_names_for_instance;self.driver.default_device_names_for_instance(instance, root_device_name, *block_device_lists);1497
+Test_155;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._notify_about_instance_usage(context, instance, 'create.end', extra_usage_info={'message';2129
+Test_156;OPENSTACK_MISSING_PARAMETERS-NETWORK;/nova/network/neutronv2/api.py;API;_get_available_networks;_ensure_requested_network_ordering((lambda x;363
+Test_157;OPENSTACK_MISSING_PARAMETERS-NETWORK;/nova/api/openstack/compute/servers.py;ServersController;_get_requested_networks;self._validate_network_id(request.network_id, network_uuids);422
+Test_158;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;block_device_mapping_get_all_by_instance_uuids;return _block_device_mapping_get_query(context).filter(models.BlockDeviceMapping.instance_uuid.in_(instance_uuids)).all();4213
+Test_159;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/notifications/base.py;None;send_update;send_instance_update_notification(context, new_instance, service=service, host=host, old_display_name=old_display_name);137
+Test_160;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/notifications/base.py;None;send_instance_update_notification;_send_versioned_instance_update(context, instance, payload, host, service);251
+Test_161;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/network/base_api.py;NetworkAPI;get_instance_nw_info;update_instance_cache_with_nw_info(self, context, instance, nw_info=result, update_cells=update_cells);261
+Test_162;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/network/base_api.py;None;wrapper;update_instance_cache_with_nw_info(self, context, instance, nw_info=res);84
+Test_163;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;block_device_mapping_get_all_by_instance;return _block_device_mapping_get_query(context).filter_by(instance_uuid=instance_uuid).all();4220
+Test_164;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/network/neutronv2/api.py;API;deallocate_for_instance;base_api.update_instance_cache_with_nw_info(self, context, instance, network_model.NetworkInfo([]));1214
+Test_165;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/network/neutronv2/api.py;API;_get_instance_nw_info;compute_utils.refresh_info_cache_for_instance(context, instance);1319
+Test_166;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/network/neutronv2/api.py;API;deallocate_for_instance;objects.VirtualInterface.delete_by_instance_uuid(context, instance.uuid);1207
+Test_167;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;_get_server;req.cache_db_instance(instance);347
+Test_168;URLPARSE_MISSING_FUNCTION_CALL-URLSPLIT_IN_VAR;/nova/api/openstack/common.py;None;remove_trailing_version_from_href;parsed_url = urlparse.urlsplit(href);266
+Test_169;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/notifications/base.py;None;send_update_with_states;send_instance_update_notification(context, instance, old_vm_state=old_vm_state, old_task_state=old_task_state, new_vm_state=new_vm_state, new_task_state=new_task_state, service=service, host=host);179
+Test_170;OPENSTACK_WRONG_PARAMETERS-NETWORK;/nova/api/openstack/compute/servers.py;ServersController;_get_requested_networks;self._validate_network_id(request.network_id, network_uuids);422
+Test_171;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;_provision_instances;return instances_to_build;989
+Test_172;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/conductor/api.py;ComputeTaskAPI;schedule_and_build_instances;self.conductor_compute_rpcapi.schedule_and_build_instances(context, build_requests, request_spec, image, admin_password, injected_files, requested_networks, block_device_mapping, tags);130
+Test_173;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;self.compute_rpcapi.build_and_run_instance(cctxt, instance=instance, image=image, request_spec=request_spec, filter_properties=filter_props, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, security_groups=legacy_secgroups, block_device_mapping=instance_bdms, host=host['host'], node=host['nodename'], limits=host['limits']);1201
+Test_174;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._from_instance_pci_requests(pci_requests);418
+Test_175;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/objects/build_request.py;BuildRequest;_from_db_object;req._load_instance(db_req['instance']);162
+Test_176;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/metadata/handler.py;MetadataRequestHandler;get_metadata_by_instance_id;return data;79
+Test_177;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/metadata/handler.py;MetadataRequestHandler;_get_meta_by_instance_id;return meta_data;304
+Test_178;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/metadata/handler.py;MetadataRequestHandler;get_metadata_by_instance_id;return data;89
+Test_179;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/network/neutronv2/api.py;API;_get_instance_nw_info;return network_model.NetworkInfo.hydrate(nw_info);1323
+Test_180;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/metadata/base.py;RouteConfiguration;get_metadata_by_instance_id;return InstanceMetadata(instance, address);709
+Test_181;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/metadata/base.py;RouteConfiguration;_format_instance_mapping;return block_device.instance_block_mapping(instance, bdms);715
+Test_182;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/ec2/ec2utils.py;None;get_int_id_from_instance_uuid;return imap.id;301
+Test_183;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;_bdm_validate_set_size_and_instance;return instance_block_device_mapping;1275
+Test_184;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/network/neutronv2/api.py;API;_ports_needed_per_instance;return ports_needed_per_instance;1684
+Test_185;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/ec2/ec2utils.py;None;get_ip_info_for_instance_from_nw_info;return ip_info;159
+Test_186;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/openstack/wsgi.py;Request;get_db_instances;return self.get_db_items('instances');133
+Test_187;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/openstack/compute/extended_volumes.py;ExtendedVolumesController;_get_instance_bdms;return bdms.get(server['id'], []);86
+Test_188;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/openstack/wsgi.py;Request;get_db_instance;return self.get_db_item('instances', instance_uuid);136
+Test_189;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/api/openstack/common.py;ViewBuilder;get_instance;return compute_api.get(context, instance_id, expected_attrs=expected_attrs);477
+Test_190;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/api.py;API;_create_instance;self.compute_task_api.schedule_and_build_instances(context, build_requests=build_requests, request_spec=request_specs, image=boot_meta, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, block_device_mapping=block_device_mapping, tags=tags);1170
+Test_191;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_block_device_names;self._default_device_names_for_instance(instance, root_device_name, ephemerals, swap, block_device_mapping);1555
+Test_192;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/api.py;API;delete;self._delete_instance(context, instance);2171
+Test_193;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/block_device.py;BlockDeviceDict;_validate;validate_and_default_volume_size(bdm_dict);121
+Test_194;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_notify_about_instance_usage;compute_utils.notify_about_instance_usage(self.notifier, context, instance, event_suffix, network_info=network_info, system_metadata=system_metadata, extra_usage_info=extra_usage_info, fault=fault);1663
+Test_195;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/api.py;API;_populate_instance_for_create;self._populate_instance_names(instance, num_instances);1513
+Test_196;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/api.py;API;create_db_entry_for_new_instance;self._populate_instance_for_create(context, instance, image, index, security_group, instance_type, num_instances, shutdown_terminate);1565
+Test_197;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_notify_about_instance_usage;compute_utils.notify_about_instance_usage(self.notifier, context, instance, event_suffix, network_info=network_info, system_metadata=system_metadata, extra_usage_info=extra_usage_info, fault=fault);1663
+Test_198;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;compute_utils.notify_about_instance_create(context, instance, self.host, phase=fields.NotificationPhase.START);1977
+Test_199;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_deallocate_network;self.network_api.deallocate_for_instance(context, instance, requested_networks=requested_networks);1680
+Test_200;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_delete_instance;self._notify_about_instance_usage(context, instance, 'delete.start');2432
+Test_201;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;compute_utils.notify_about_instance_create(context, instance, self.host, phase=fields.NotificationPhase.END);2132
+Test_202;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;create_db_entry_for_new_instance;return instance;1572
+Test_203;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._update_instance_after_spawn(context, instance);2115
+Test_204;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._validate_instance_group_policy(context, instance, filter_properties);1994
+Test_205;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;self._notify_about_instance_usage(context, instance, 'delete.end', system_metadata=system_meta);758
+Test_206;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;bad_volumes_callback;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.REBOOT, phase=fields.NotificationPhase.END);3163
+Test_207;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;reboot_instance;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.REBOOT, phase=fields.NotificationPhase.START);3085
+Test_208;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_process_instance_vif_deleted_event;base_net_api.update_instance_cache_with_nw_info(self.network_api, context, instance, nw_info=network_info);7001
+Test_209;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_do_build_and_run_instance;self._build_and_run_instance(context, instance, image, decoded_files, admin_password, requested_networks, security_groups, block_device_mapping, node, limits, filter_properties);1852
+Test_210;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_block_device_names;self._default_device_names_for_instance(instance, root_device_name, ephemerals, swap, block_device_mapping);1555
+Test_211;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_heal_instance_info_cache;self.network_api.get_instance_nw_info(context, instance);6121
+Test_212;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;bad_volumes_callback;self._notify_about_instance_usage(context, instance, 'reboot.end');3162
+Test_213;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;handle_lifecycle_event;self._sync_instance_power_state(context, instance, vm_power_state);1092
+Test_214;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_update_scheduler_instance_info;self.scheduler_client.update_instance_info(context, self.host, instance);1638
+Test_215;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._notify_about_instance_usage(context, instance, 'create.start', extra_usage_info={'image_name';1975
+Test_216;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_device_names_for_instance;self.driver.default_device_names_for_instance(instance, root_device_name, *block_device_lists);1497
+Test_217;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_update_instance_after_spawn;configdrive.update_instance(instance);1622
+Test_218;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;do_terminate_instance;do_terminate_instance(instance, bdms);2521
+Test_219;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_delete_scheduler_instance_info;self.scheduler_client.delete_instance_info(context, self.host, instance_uuid);1646
+Test_220;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_sync_scheduler_instance_info;self.scheduler_client.sync_instance_info(context, self.host, uuids);1658
+Test_221;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;external_instance_event;self.network_api.get_instance_nw_info(context, instance);7082
+Test_222;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/manager.py;SchedulerManager;sync_instance_info;self.driver.host_manager.sync_instance_info(context, host_name, instance_uuids);190
+Test_223;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/manager.py;SchedulerManager;delete_instance_info;self.driver.host_manager.delete_instance_info(context, host_name, instance_uuid);183
+Test_224;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/manager.py;SchedulerManager;update_instance_info;self.driver.host_manager.update_instance_info(context, host_name, instance_info);176
+Test_225;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/client/__init__.py;SchedulerClient;delete_instance_info;self.queryclient.delete_instance_info(context, host_name, instance_uuid);75
+Test_226;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/client/__init__.py;SchedulerClient;update_instance_info;self.queryclient.update_instance_info(context, host_name, instance_info);71
+Test_227;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_delete_instance;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.DELETE, phase=fields.NotificationPhase.START);2434
+Test_228;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/client/__init__.py;SchedulerClient;sync_instance_info;self.queryclient.sync_instance_info(context, host_name, instance_uuids);79
+Test_229;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/client/query.py;SchedulerQueryClient;sync_instance_info;self.scheduler_rpcapi.sync_instance_info(context, host_name, instance_uuids);85
+Test_230;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/client/query.py;SchedulerQueryClient;delete_instance_info;self.scheduler_rpcapi.delete_instance_info(context, host_name, instance_uuid);71
+Test_231;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/scheduler/client/query.py;SchedulerQueryClient;update_instance_info;self.scheduler_rpcapi.update_instance_info(context, host_name, instance_info);60
+Test_232;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/notifications/base.py;None;send_update_with_states;send_instance_update_notification(context, instance, old_vm_state=old_vm_state, old_task_state=old_task_state, new_vm_state=new_vm_state, new_task_state=new_task_state, service=service, host=host);179
+Test_233;OPENSTACK_WRONG_PARAMETERS-NETWORK;/nova/virt/libvirt/driver.py;LibvirtDriver;spawn;self._create_domain_and_network(context, xml, instance, network_info, block_device_info=block_device_info, post_xml_callback=gen_confdrive, destroy_disks_on_failure=True);2899
+Test_234;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/notifications/base.py;None;send_update;send_instance_update_notification(context, new_instance, service=service, host=host, old_display_name=old_display_name);137
+Test_235;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/notifications/base.py;None;send_instance_update_notification;_send_versioned_instance_update(context, instance, payload, host, service);251
+Test_236;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._notify_about_instance_usage(context, instance, 'create.end', extra_usage_info={'message';2129
+Test_237;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/network/base_api.py;None;wrapper;update_instance_cache_with_nw_info(self, context, instance, nw_info=res);84
+Test_238;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/network/neutronv2/api.py;API;deallocate_for_instance;objects.VirtualInterface.delete_by_instance_uuid(context, instance.uuid);1207
+Test_239;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/network/neutronv2/api.py;API;deallocate_for_instance;base_api.update_instance_cache_with_nw_info(self, context, instance, network_model.NetworkInfo([]));1214
+Test_240;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;_get_servers;req.cache_db_instances(instance_list);326
+Test_241;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;create;req.cache_db_instances(instances);637
+Test_242;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;get_instances_host_statuses;return host_statuses;4345
+Test_243;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;_get_server;req.cache_db_instance(instance);347
+Test_244;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;cleanup;self.unfilter_instance(instance, network_info);945
+Test_245;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/objects/instance.py;Instance;_handle_cell_update_from_api;db.instance_extra_update_by_uuid(context, self.uuid, self._extra_values_to_save);749
+Test_246;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_update;_instance_metadata_update_in_place(context, instance_ref, 'system_metadata', models.InstanceSystemMetadata, system_metadata);2811
+Test_247;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._from_instance_numa_topology(numa_topology);419
+Test_248;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/objects/build_request.py;BuildRequest;_from_db_object;req._load_instance(db_req['instance']);162
+Test_249;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_get_sec_group_models;ec2_instance_create(context, instance_ref['uuid']);1830
+Test_250;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/conductor/api.py;ComputeTaskAPI;schedule_and_build_instances;self.conductor_compute_rpcapi.schedule_and_build_instances(context, build_requests, request_spec, image, admin_password, injected_files, requested_networks, block_device_mapping, tags);130
+Test_251;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;objects.BuildRequest.get_by_instance_uuid(context, instance.uuid);1109
+Test_252;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;compute_utils.check_num_instances_quota(context, instance.flavor, 0, 0, orig_num_req=len(build_requests));1136
+Test_253;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._from_instance_pci_requests(pci_requests);418
+Test_254;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/event.py;InstanceEvent;get_instance_uuid;return self.uuid;82
+Test_255;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/driver.py;ComputeDriver;dhcp_options_for_instance;return None;1327
+Test_256;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/driver.py;ComputeDriver;macs_for_instance;return None;1301
+Test_257;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/driver.py;ComputeDriver;get_num_instances;return len(self.list_instances());181
+Test_258;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/driver.py;ComputeDriver;get_per_instance_usage;return {};1421
+Test_259;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/hardware.py;InstanceInfo;numa_usage_from_instances;return objects.NUMATopology(cells=cells);1648
+Test_260;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/hardware.py;InstanceInfo;instance_topology_from_instance;return instance_numa_topology;1720
+Test_261;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/host.py;Host;list_instance_domains;return doms;603
+Test_262;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/utils.py;None;get_instance_path;return os.path.join(CONF.instances_path, instance.uuid);470
+Test_263;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_device_names_for_instance;self.driver.default_device_names_for_instance(instance, root_device_name, *block_device_lists);1497
+Test_264;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;compute_utils.notify_about_instance_create(context, instance, self.host, phase=fields.NotificationPhase.START);1977
+Test_265;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.DELETE, phase=fields.NotificationPhase.END);760
+Test_266;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_notify_about_instance_usage;compute_utils.notify_about_instance_usage(self.notifier, context, instance, event_suffix, network_info=network_info, system_metadata=system_metadata, extra_usage_info=extra_usage_info, fault=fault);1663
+Test_267;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_do_build_and_run_instance;self._build_and_run_instance(context, instance, image, decoded_files, admin_password, requested_networks, security_groups, block_device_mapping, node, limits, filter_properties);1852
+Test_268;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;self._delete_scheduler_instance_info(context, instance.uuid);763
+Test_269;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._notify_about_instance_usage(context, instance, 'create.start', extra_usage_info={'image_name';1975
+Test_270;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_default_block_device_names;self._default_device_names_for_instance(instance, root_device_name, ephemerals, swap, block_device_mapping);1555
+Test_271;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;handle_lifecycle_event;self._sync_instance_power_state(context, instance, vm_power_state);1092
+Test_272;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_update_scheduler_instance_info;self.scheduler_client.update_instance_info(context, self.host, instance);1638
+Test_273;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_heal_instance_info_cache;self.network_api.get_instance_nw_info(context, instance);6121
+Test_274;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._update_instance_after_spawn(context, instance);2115
+Test_275;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/manager.py;ComputeManager;_delete_instance;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.DELETE, phase=fields.NotificationPhase.START);2434
+Test_276;DISKIO_MISSING_FUNCTION_CALL-WRITE;/nova/virt/libvirt/host.py;Host;_queue_event;self._event_notify_send.write(c);242
+Test_277;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/compute/api.py;API;_create_instance;return (instances, reservation_id);1181
+Test_278;DISKIO_MISSING_FUNCTION_CALL-WRITE;/nova/virt/libvirt/imagebackend.py;Image;write_to_disk_info_file;tmp_file.write(('%s\n' % jsonutils.dumps(dct)));354
+Test_279;DISKIO_MISSING_FUNCTION_CALL-WRITE;/nova/virt/libvirt/driver.py;LibvirtDriver;_supports_direct_io;m.write(('x' * align_size));3082
+Test_280;DISKIO_MISSING_FUNCTION_CALL-WRITE;/nova/virt/libvirt/driver.py;LibvirtDriver;_supports_direct_io;os.write(fd, m);3083
+Test_281;DISKIO_MISSING_FUNCTION_CALL-WRITE;/nova/image/glance.py;GlanceImageServiceV2;download;data.write(chunk);359
+Test_282;URLLIB_MISSING_FUNCTION_CALL-CLEAR;/nova/network/neutronv2/api.py;API;_refresh_neutron_extensions_cache;self.extensions.clear();1028
+Test_283;URLLIB_MISSING_FUNCTION_CALL-CLEAR;/nova/compute/stats.py;Stats;clear;self.states.clear();33
+Test_284;URLLIB_MISSING_FUNCTION_CALL-CLEAR;/nova/compute/stats.py;Stats;clear;super(Stats, self).clear();31
+Test_285;URLLIB_MISSING_FUNCTION_CALL-CLEAR;/nova/compute/resource_tracker.py;ResourceTracker;_copy_resources;self.stats.clear();631
+Test_286;URLLIB_MISSING_FUNCTION_CALL-CLEAR;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self.tracked_instances.clear();1109
+Test_287;URLLIB_MISSING_FUNCTION_CALL-CLEAR;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_migrations;self.tracked_migrations.clear();1016
+Test_288;OPENSTACK_WRONG_PARAMETERS-NETWORK;/nova/virt/libvirt/driver.py;LibvirtDriver;_hard_reboot;self._create_domain_and_network(context, xml, instance, network_info, block_device_info=block_device_info, vifs_already_plugged=True);2615
+Test_289;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/block_device.py;BlockDeviceDict;create_image_bdm;return BlockDeviceDict({'source_type';270
+Test_290;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/utils.py;ExceptionHelper;get_auto_disk_config_from_image_props;return image_properties.get('auto_disk_config');1070
+Test_291;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/utils.py;ExceptionHelper;get_image_from_system_metadata;return image_meta;1127
+Test_292;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/utils.py;ExceptionHelper;get_system_metadata_from_image;return system_meta;1098
+Test_293;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/notifications/base.py;None;image_meta;return image_meta;382
+Test_294;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/api/ec2/ec2utils.py;None;image_type;return 'aki';69
+Test_295;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/api/ec2/ec2utils.py;None;image_type;return 'ari';71
+Test_296;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/api/openstack/compute/servers.py;ServersController;_image_from_req_data;return image_href;855
+Test_297;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/api/openstack/compute/views/servers.py;ViewBuilder;_get_image;return {'id';263
+Test_298;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/virt/hardware.py;InstanceInfo;_get_flavor_image_meta;return (flavor_policy, image_policy);1053
+Test_299;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/virt/disk/api.py;None;can_resize_image;return False;229
+Test_300;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/virt/disk/api.py;None;can_resize_image;return True;230
+Test_301;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/objects/instance.py;Instance;image_meta;return objects.ImageMeta.from_instance(self);237
+Test_302;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/image/api.py;API;_get_session_and_image_id;return glance.get_remote_image_service(context, id_or_uri);43
+Test_303;DISKIO_WRONG_PARAMETERS-WRITE;/nova/virt/libvirt/host.py;Host;_queue_event;self._event_notify_send.write(c);242
+Test_304;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/image/glance.py;None;generate_image_url;return ('%s/images/%s' % (generate_glance_url(), image_ref));79
+Test_305;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/image/glance.py;GlanceImageServiceV2;get_remote_image_service;return (image_service, image_href);878
+Test_306;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/image/glance.py;GlanceImageServiceV2;get_default_image_service;return GlanceImageServiceV2();892
+Test_307;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/image/glance.py;GlanceImageServiceV2;_is_image_available;return True;616
+Test_308;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/db/api.py;None;s3_image_create;return IMPL.s3_image_create(context, image_uuid);1829
+Test_309;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/db/api.py;None;s3_image_get_by_uuid;return IMPL.s3_image_get_by_uuid(context, image_uuid);1824
+Test_310;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;s3_image_get_by_uuid;return result;5685
+Test_311;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;s3_image_create;return s3_image_ref;5698
+Test_312;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/compute/api.py;API;_get_image;return (image['id'], image);743
+Test_313;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/compute/api.py;API;_get_image_defined_bdms;return image_defined_bdms;645
+Test_314;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/compute/api.py;API;not_image_and_root_bdm;return block_device_obj.block_device_make_list_from_dicts(context, block_device_mapping);735
+Test_315;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/compute/api.py;API;_inherit_properties_from_image;return {'os_type';496
+Test_316;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/nova/objects/request_spec.py;RequestSpec;_to_legacy_image;return (base.obj_to_primitive(self.image) if (self.obj_attr_is_set('image') and self.image) else {});298
+Test_317;DISKIO_THROW_EXCEPTION-WRITE;/nova/virt/libvirt/host.py;Host;_queue_event;self._event_notify_send.write(c);242
+Test_318;DISKIO_MISSING_PARAMETERS-WRITE;/nova/virt/libvirt/host.py;Host;_queue_event;self._event_notify_send.write(c);242
+Test_319;OPENSTACK_WRONG_PARAMETERS-IMAGE;/nova/virt/images.py;None;fetch_to_raw;convert_image(path_tmp, staged, fmt, 'raw');166
+Test_320;OPENSTACK_WRONG_PARAMETERS-IMAGE;/nova/virt/libvirt/imagebackend.py;Image;fetch_func_sync;self.resize_image(size);247
+Test_321;OPENSTACK_WRONG_PARAMETERS-IMAGE;/nova/virt/libvirt/driver.py;LibvirtDriver;_create_images_and_backing;self._try_fetch_image_cache(disk, libvirt_utils.fetch_image, context, cache_name, instance.image_ref, instance, info['virt_disk_size'], fallback_from_host);7225
+Test_322;OPENSTACK_WRONG_PARAMETERS-IMAGE;/nova/virt/libvirt/driver.py;LibvirtDriver;_hard_reboot;self._create_images_and_backing(context, instance, instance_dir, backing_disk_info);2605
+Test_323;OPENSTACK_WRONG_PARAMETERS-IMAGE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._image_meta_from_image(image);416
+Test_324;OPENSTACK_WRONG_PARAMETERS-IMAGE;/nova/compute/api.py;API;_checks_for_create_and_rebuild;self._check_requested_image(context, image_id, image, instance_type, root_bdm);750
+Test_325;OPENSTACK_THROW_EXCEPTION-NETWORK;/nova/network/neutronv2/api.py;API;_get_available_networks;_ensure_requested_network_ordering((lambda x;363
+Test_326;OPENSTACK_THROW_EXCEPTION-NETWORK;/nova/api/openstack/compute/servers.py;ServersController;_get_requested_networks;self._validate_network_id(request.network_id, network_uuids);422
+Test_327;OPENSTACK_THROW_EXCEPTION-NETWORK;/nova/virt/libvirt/driver.py;LibvirtDriver;_hard_reboot;self._create_domain_and_network(context, xml, instance, network_info, block_device_info=block_device_info, vifs_already_plugged=True);2615
+Test_328;OPENSTACK_THROW_EXCEPTION-NETWORK;/nova/compute/manager.py;ComputeManager;_try_deallocate_network;self._deallocate_network(context, instance, requested_networks);2250
+Test_329;OPENSTACK_THROW_EXCEPTION-NETWORK;/nova/compute/manager.py;ComputeManager;_shutdown_instance;self._try_deallocate_network(context, instance, requested_networks);2333
+Test_330;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/block_device.py;BlockDeviceDict;_validate;validate_and_default_volume_size(bdm_dict);121
+Test_331;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/block_device.py;DriverVolumeBlockDevice;attach;virt_driver.attach_volume(context, connection_info, instance, self['mount_device'], disk_bus=self['disk_bus'], device_type=self['device_type'], encryption=encryption);390
+Test_332;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/volume/iscsi.py;LibvirtISCSIVolumeDriver;disconnect_volume;super(LibvirtISCSIVolumeDriver, self).disconnect_volume(connection_info, disk_dev, instance);79
+Test_333;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/volume/iscsi.py;LibvirtISCSIVolumeDriver;disconnect_volume;self.connector.disconnect_volume(connection_info['data'], None);73
+Test_334;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_ephemeral_devices;self._connect_volume(connection_info, info, instance);3936
+Test_335;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_connect_volume;vol_driver.connect_volume(connection_info, disk_info, instance);1191
+Test_336;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/network/neutronv2/api.py;API;_get_available_networks;_ensure_requested_network_ordering((lambda x;363
+Test_337;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/network/neutronv2/api.py;API;_validate_requested_network_ids;self._check_external_network_attach(context, nets);747
+Test_338;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/api/openstack/compute/servers.py;ServersController;_get_requested_networks;self._validate_network_id(request.network_id, network_uuids);422
+Test_339;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/virt/libvirt/driver.py;LibvirtDriver;spawn;self._create_domain_and_network(context, xml, instance, network_info, block_device_info=block_device_info, post_xml_callback=gen_confdrive, destroy_disks_on_failure=True);2899
+Test_340;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/virt/libvirt/driver.py;LibvirtDriver;_hard_reboot;self._create_domain_and_network(context, xml, instance, network_info, block_device_info=block_device_info, vifs_already_plugged=True);2615
+Test_341;OPENSTACK_THROW_EXCEPTION-SSH;/nova/crypto.py;None;generate_fingerprint;serialization.load_ssh_public_key(pub_bytes, backends.default_backend());100
+Test_342;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/compute/manager.py;ComputeManager;_try_deallocate_network;self._deallocate_network(context, instance, requested_networks);2250
+Test_343;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/nova/compute/manager.py;ComputeManager;_shutdown_instance;self._try_deallocate_network(context, instance, requested_networks);2333
+Test_344;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/api.py;API;_create_instance;self.compute_task_api.schedule_and_build_instances(context, build_requests=build_requests, request_spec=request_specs, image=boot_meta, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, block_device_mapping=block_device_mapping, tags=tags);1170
+Test_345;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/api.py;API;delete;self._delete_instance(context, instance);2171
+Test_346;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instance;self.stats.update_stats_for_instance(instance, is_removed_instance);1079
+Test_347;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;instance_claim;self._update_usage_from_instance(context, instance, nodename);225
+Test_348;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instance;self.pci_tracker.update_pci_for_instance(context, instance, sign=sign);1085
+Test_349;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/api.py;API;create_db_entry_for_new_instance;self._populate_instance_for_create(context, instance, image, index, security_group, instance_type, num_instances, shutdown_terminate);1565
+Test_350;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_disconnect_volume;vol_driver.disconnect_volume(connection_info, disk_dev, instance);1195
+Test_351;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/compute/api.py;API;_attach_volume;self._check_attach_and_reserve_volume(context, volume_id, instance);3707
+Test_352;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_connect_volume;vol_driver.connect_volume(connection_info, disk_info, instance);1191
+Test_353;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._connect_volume(connection_info, disk_info, instance);1269
+Test_354;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;cleanup;self._disconnect_volume(connection_info, disk_dev, instance);1013
+Test_355;OPENSTACK_WRONG_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._check_discard_for_attach_volume(conf, instance);1275
+Test_356;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_deallocate_network;self.network_api.deallocate_for_instance(context, instance, requested_networks=requested_networks);1680
+Test_357;OPENSTACK_MISSING_PARAMETERS-INSTANCE;/nova/compute/manager.py;ComputeManager;_delete_instance;self._notify_about_instance_usage(context, instance, 'delete.start');2432
+Test_358;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._connect_volume(connection_info, disk_info, instance);1269
+Test_359;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_disconnect_volume;vol_driver.disconnect_volume(connection_info, disk_dev, instance);1195
+Test_360;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/objects/request_spec.py;RequestSpec;from_components;spec_obj._from_instance_numa_topology(numa_topology);419
+Test_361;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_shutdown_instance;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.SHUTDOWN, phase=fields.NotificationPhase.START);2298
+Test_362;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_build_and_run_instance;self._update_scheduler_instance_info(context, instance);2128
+Test_363;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_shutdown_instance;self._notify_about_instance_usage(context, instance, 'shutdown.start');2296
+Test_364;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_shutdown_instance;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.SHUTDOWN, phase=fields.NotificationPhase.END);2385
+Test_365;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_delete_instance;self._shutdown_instance(context, instance, bdms);2438
+Test_366;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;reboot_instance;self._notify_about_instance_usage(context, instance, 'reboot.start');3084
+Test_367;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._connect_volume(connection_info, disk_info, instance);1269
+Test_368;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;do_terminate_instance;self._delete_instance(context, instance, bdms);2509
+Test_369;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;rt.reportclient.delete_allocation_for_instance(instance.uuid);756
+Test_370;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;compute_utils.notify_about_instance_action(context, instance, self.host, action=fields.NotificationAction.DELETE, phase=fields.NotificationPhase.END);760
+Test_371;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_complete_deletion;self._delete_scheduler_instance_info(context, instance.uuid);763
+Test_372;OPENSTACK_MISSING_FUNCTION_CALL-INSTANCE;/nova/compute/manager.py;ComputeManager;_shutdown_instance;self._notify_about_instance_usage(context, instance, 'shutdown.end');2383
+Test_373;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/api.py;API;_create_instance;self.compute_task_api.schedule_and_build_instances(context, build_requests=build_requests, request_spec=request_specs, image=boot_meta, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, block_device_mapping=block_device_mapping, tags=tags);1170
+Test_374;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self._update_usage_from_instance(context, instance, nodename, require_allocation_refresh=require_allocation_refresh);1200
+Test_375;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_usage_from_instances;self._remove_deleted_instances_allocations(context, cn);1203
+Test_376;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_available_resource;self._pair_instances_to_migrations(migrations, instances);751
+Test_377;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_ephemeral_devices;self._connect_volume(connection_info, info, instance);3936
+Test_378;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;update_usage;self._update_usage_from_instance(context, instance, nodename);512
+Test_379;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/resource_tracker.py;ResourceTracker;_update_available_resource;self._update_usage_from_instances(context, instances, nodename);745
+Test_380;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/api.py;API;_hard_reboot;self.compute_rpcapi.reboot_instance(context, instance=instance, block_device_info=None, reboot_type='HARD');2969
+Test_381;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;_schedule_instances;scheduler_utils.setup_instance_group(context, request_spec);633
+Test_382;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;cleanup;self._disconnect_volume(connection_info, disk_dev, instance);1013
+Test_383;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/api.py;API;_populate_instance_for_create;self._populate_instance_names(instance, num_instances);1513
+Test_384;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/conductor/manager.py;ComputeTaskManager;schedule_and_build_instances;self.compute_rpcapi.build_and_run_instance(cctxt, instance=instance, image=image, request_spec=request_spec, filter_properties=filter_props, admin_password=admin_password, injected_files=injected_files, requested_networks=requested_networks, security_groups=legacy_secgroups, block_device_mapping=instance_bdms, host=host['host'], node=host['nodename'], limits=host['limits']);1201
+Test_385;OPENSTACK_THROW_EXCEPTION-INSTANCE;/nova/compute/api.py;API;create_db_entry_for_new_instance;self._populate_instance_for_create(context, instance, image, index, security_group, instance_type, num_instances, shutdown_terminate);1565
+Test_386;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_instance_disk_info_from_config;return disk_info;7407
+Test_387;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;delete_instance_files;return True;8190
+Test_388;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/driver.py;LibvirtDriver;attach_volume;self._check_discard_for_attach_volume(conf, instance);1275
+Test_389;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;list_instances;return names;746
+Test_390;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;get_device_name_for_instance;return block_device.prepend_dev(disk_info['dev']);8245
+Test_391;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/fields.py;VMMode;get_from_instance;return cls.canonicalize(mode);613
+Test_392;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/request_spec.py;RequestSpec;_to_legacy_instance;return instance;319
+Test_393;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/instance_fault.py;InstanceFaultList;get_latest_by_instance_uuids;return base.obj_make_list(context, cls(context), objects.InstanceFault, db_faultlist);112
+Test_394;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/virt/libvirt/driver.py;LibvirtDriver;_get_instance_capabilities;return instance_caps;5585
+Test_395;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/volume/iscsi.py;LibvirtISCSIVolumeDriver;disconnect_volume;super(LibvirtISCSIVolumeDriver, self).disconnect_volume(connection_info, disk_dev, instance);79
+Test_396;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/block_device.py;BlockDeviceMappingList;instance_uuids;return set((bdm.instance_uuid for bdm in self if bdm.obj_attr_is_set('instance_uuid')));326
+Test_397;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/block_device.py;BlockDeviceMappingList;get_by_instance_uuids;return base.obj_make_list(context, cls(), objects.BlockDeviceMapping, (db_bdms or []));348
+Test_398;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/build_request.py;BuildRequest;get_by_instance_uuid;return cls._from_db_object(context, cls(), db_req);179
+Test_399;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/build_request.py;BuildRequest;get_new_instance;return instance;254
+Test_400;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/ec2.py;EC2Ids;get_by_instance;return cls._from_dict(cls(context), ec2_ids);217
+Test_401;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/instance.py;Instance;_make_instance_list;return inst_list;1204
+Test_402;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/virt/libvirt/volume/iscsi.py;LibvirtISCSIVolumeDriver;disconnect_volume;self.connector.disconnect_volume(connection_info['data'], None);73
+Test_403;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/instance_mapping.py;InstanceMapping;_get_by_instance_uuid_from_db;return db_mapping;68
+Test_404;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/instance_mapping.py;InstanceMapping;get_by_instance_uuid;return cls._from_db_object(context, cls(), db_mapping);73
+Test_405;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/image_meta.py;ImageMeta;from_instance;return cls.from_dict(image_meta);127
+Test_406;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/objects/build_request.py;BuildRequest;_get_by_instance_uuid_from_db;return db_req;174
+Test_407;OPENSTACK_MISSING_PARAMETERS-VOLUME;/nova/compute/api.py;API;_attach_volume;self.compute_rpcapi.attach_volume(context, instance, volume_bdm);3708
+Test_408;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_create;return IMPL.instance_create(context, values);734
+Test_409;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_info_cache_update;return IMPL.instance_info_cache_update(context, instance_uuid, values);951
+Test_410;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_get_by_uuid;return IMPL.instance_get_by_uuid(context, uuid, columns_to_join);744
+Test_411;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_info_cache_delete;return IMPL.instance_info_cache_delete(context, instance_uuid);959
+Test_412;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;block_device_mapping_get_all_by_instance_uuids;return IMPL.block_device_mapping_get_all_by_instance_uuids(context, instance_uuids);1319
+Test_413;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_get_all_by_filters_sort;return IMPL.instance_get_all_by_filters_sort(context, filters, limit=limit, marker=marker, columns_to_join=columns_to_join, sort_keys=sort_keys, sort_dirs=sort_dirs);779
+Test_414;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_update_and_get_original;return rv;860
+Test_415;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_extra_get_by_instance_uuid;return IMPL.instance_extra_get_by_instance_uuid(context, instance_uuid, columns=columns);971
+Test_416;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_get_all_by_host;return _instances_fill_metadata(context, query.filter_by(host=host).all(), manual_joins=columns_to_join);2540
+Test_417;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;ec2_instance_get_by_uuid;return result;6249
+Test_418;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;ec2_instance_get_by_uuid;return IMPL.ec2_instance_get_by_uuid(context, instance_uuid);1988
+Test_419;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_extra_update_by_uuid;return IMPL.instance_extra_update_by_uuid(context, instance_uuid, updates);981
+Test_420;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/api.py;None;instance_get_all_by_filters;return IMPL.instance_get_all_by_filters(context, filters, sort_key, sort_dir, limit=limit, marker=marker, columns_to_join=columns_to_join);766
+Test_421;OPENSTACK_WRONG_PARAMETERS-NETWORK;/nova/compute/manager.py;ComputeManager;_try_deallocate_network;self._deallocate_network(context, instance, requested_networks);2250
+Test_422;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/network/neutronv2/api.py;API;_get_instance_nw_info;compute_utils.refresh_info_cache_for_instance(context, instance);1319
+Test_423;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_get_by_uuid;return result;1922
+Test_424;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_build_instance_get;return query;1961
+Test_425;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_get_all_by_host_and_node;return _instances_fill_metadata(context, _instance_get_all_query(context, joins=columns_to_join).filter_by(host=host).filter_by(node=node).all(), manual_joins=manual_joins);2568
+Test_426;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_fault_get_by_instance_uuids;return {};6026
+Test_427;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_ec2_instance_get_query;return model_query(context, models.InstanceIdMapping, read_deleted='yes');6273
+Test_428;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_fault_get_by_instance_uuids;return output;6075
+Test_429;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_update_and_get_original;return (copy.copy(instance_ref), _instance_update(context, instance_uuid, values, expected, original=instance_ref));2665
+Test_430;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_update;return instance_ref;2816
+Test_431;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;instance_info_cache_update;return info_cache;2890
+Test_432;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_system_metadata_get_multi;return [];5365
+Test_433;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;create;req.cache_db_instances(instances);637
+Test_434;OPENSTACK_WRONG_PARAMETERS-NETWORK;/nova/compute/manager.py;ComputeManager;_shutdown_instance;self._try_deallocate_network(context, instance, requested_networks);2333
+Test_435;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/objects/build_request.py;BuildRequest;_from_db_object;req._load_instance(db_req['instance']);162
+Test_436;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/objects/instance.py;Instance;_handle_cell_update_from_api;db.instance_extra_update_by_uuid(context, self.uuid, self._extra_values_to_save);749
+Test_437;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_get_sec_group_models;ec2_instance_create(context, instance_ref['uuid']);1830
+Test_438;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/db/sqlalchemy/api.py;DeleteFromSelect;_instance_update;_instance_metadata_update_in_place(context, instance_ref, 'system_metadata', models.InstanceSystemMetadata, system_metadata);2811
+Test_439;OPENSTACK_WRONG_PARAMETERS-INSTANCE;/nova/api/openstack/compute/servers.py;ServersController;_get_server;req.cache_db_instance(instance);347

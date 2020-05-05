@@ -1,0 +1,270 @@
+Test_id;Fault_Type;Target_Component;Target_Class;Target_Function;Fault_Location;Line
+Test_1;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/volume/api.py;API;get_list_volumes_image_metadata;return results;1259
+Test_2;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;clone_image;return (None, False);571
+Test_3;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;return model_update;704
+Test_4;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_cache_or_download;return model_update;888
+Test_5;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image;return model_update;958
+Test_6;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/db/api.py;None;image_volume_cache_get_by_volume_id;return IMPL.image_volume_cache_get_by_volume_id(context, volume_id);1636
+Test_7;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/api/v2/volumes.py;VolumeController;_image_uuid_from_ref;return image['id'];147
+Test_8;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/db/sqlalchemy/api.py;None;image_volume_cache_get_by_volume_id;return session.query(models.ImageVolumeCacheEntry).filter_by(volume_id=volume_id).first();6544
+Test_9;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/image/image_utils.py;TemporaryImages;for_image_service;return instance;658
+Test_10;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/image/cache.py;ImageVolumeCache;get_by_image_volume;return self.db.image_volume_cache_get_by_volume_id(context, volume_id);41
+Test_11;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/image/glance.py;GlanceImageService;get_remote_image_service;return (image_service, image_href);630
+Test_12;OPENSTACK_WRONG_RETURN_VALUE-IMAGE;/cinder/image/glance.py;GlanceImageService;_is_image_available;return True;474
+Test_13;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;schedule_create_volume;self.volume_rpcapi.create_volume(context, updated_volume, request_spec, filter_properties, allow_reschedule=True);108
+Test_14;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;_choose_top_backend;backend_state.consume_from_volume(volume_properties);545
+Test_15;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/scheduler/host_manager.py;HostManager;_update_backend_state_map;backend_state.update_from_volume_capability(capabilities, service=dict(service));610
+Test_16;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/objects/volume.py;Volume;finish_detach;db.volume_admin_metadata_delete(self._context, self.id, 'attached_mode');547
+Test_17;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/objects/volume.py;Volume;save;db.volume_update(self._context, self.id, updates);389
+Test_18;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/api.py;API;delete;self.volume_rpcapi.delete_volume(context, volume, unmanage_only, cascade);532
+Test_19;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.end');1229
+Test_20;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.start');1181
+Test_21;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.start');1281
+Test_22;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);745
+Test_23;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self.driver.detach_volume(context, volume, attachment);1293
+Test_24;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self.driver.attach_volume(context, volume, instance_uuid, host_name_sanitized, mountpoint);1207
+Test_25;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;QUOTAS.add_volume_type_opts(context, reserve_opts, volume.volume_type_id);804
+Test_26;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.end');1324
+Test_27;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);825
+Test_28;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;_notify_about_volume_usage;vol_utils.notify_about_volume_usage(context, volume, event_suffix, extra_usage_info=extra_usage_info, host=self.host);2477
+Test_29;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.driver.delete_volume(volume);775
+Test_30;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.db.volume_glance_metadata_delete_by_volume(context, volume.id);815
+Test_31;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;_report_driver_status;self._append_volume_stats(volume_stats);2415
+Test_32;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;_create_volume;vg_ref.create_volume(name, size, lvm_type, mirror_count);200
+Test_33;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;delete_volume;self._delete_volume(volume);459
+Test_34;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_copy_image_to_volume;self.driver.copy_image_to_volume(context, volume, image_service, image_id);554
+Test_35;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._copy_image_to_volume(context, volume, image_meta, image_location, image_service);697
+Test_36;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_handle_bootable_volume_glance_meta;self._capture_volume_image_metadata(context, volume.id, image_id, image_meta);438
+Test_37;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/api/contrib/volume_image_metadata.py;VolumeImageMetadataController;detail;self._add_image_metadata(context, volumes);85
+Test_38;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/api/contrib/volume_image_metadata.py;VolumeImageMetadataController;show;self._add_image_metadata(context, [resp_obj.obj['volume']]);76
+Test_39;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/image/image_utils.py;None;fetch_to_volume_format;convert_image(tmp, dest, volume_format, src_format=disk_format, run_as_root=run_as_root);420
+Test_40;OPENSTACK_MISSING_FUNCTION_CALL-IMAGE;/cinder/image/image_utils.py;TemporaryImages;fetch;fetch_verify_image(context, image_service, image_id, tmp);666
+Test_41;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/flows/api/create_volume.py;QuotaReserveTask;execute;QUOTAS.add_volume_type_opts(context, reserve_opts, volume_type_id);652
+Test_42;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/flows/api/create_volume.py;VolumeCastTask;_cast_create_volume;self.scheduler_rpcapi.create_volume(context, volume, snapshot_id=snapshot_id, image_id=image_id, request_spec=request_spec, filter_properties=filter_properties);790
+Test_43;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/flows/manager/create_volume.py;NotifyVolumeActionTask;execute;volume_utils.notify_about_volume_usage(context, volume, self.event_suffix, host=volume.host);355
+Test_44;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_capture_volume_image_metadata;self.db.volume_glance_metadata_bulk_create(context, volume_id, volume_metadata);617
+Test_45;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_handle_bootable_volume_glance_meta;self._capture_volume_image_metadata(context, volume.id, image_id, image_meta);438
+Test_46;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_qos_specs_get;_volume_type_get(context, type_id, session);3932
+Test_47;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/v2/volumes.py;VolumeController;_get_volumes;self.volume_api.check_volume_filters(filters);111
+Test_48;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/contrib/volume_mig_status_attribute.py;VolumeMigStatusAttributeController;show;self._add_volume_mig_status_attribute(req, resp_obj.obj['volume']);34
+Test_49;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/contrib/volume_host_attribute.py;VolumeHostAttributeController;show;self._add_volume_host_attribute(req, volume);34
+Test_50;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/contrib/volume_tenant_attribute.py;VolumeTenantAttributeController;show;self._add_volume_tenant_attribute(req, volume);34
+Test_51;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;req.cache_db_volumes(volumes.objects);135
+Test_52;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;self.volume_api.check_volume_filters(filters, strict);123
+Test_53;OPENSTACK_MISSING_PARAMETERS-VOLUME;/cinder/api/contrib/volume_actions.py;VolumeActionsController;_reserve;self.volume_api.reserve_volume(context, volume);141
+Test_54;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/scheduler/rpcapi.py;SchedulerAPI;create_volume;return cctxt.cast(ctxt, 'create_volume', **msg_args);101
+Test_55;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/scheduler/driver.py;None;volume_update_db;return volume;57
+Test_56;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/objects/volume.py;Volume;volume_metadata;return md;161
+Test_57;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/objects/volume.py;Volume;volume_admin_metadata;return md;171
+Test_58;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/objects/volume_attachment.py;VolumeAttachmentList;get_all_by_volume_id;return base.obj_make_list(context, cls(context), objects.VolumeAttachment, attachments);178
+Test_59;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/volume_types.py;None;get_volume_type;return db.volume_type_get(ctxt, id, expected_fields=expected_fields);130
+Test_60;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/volume_types.py;None;get_default_volume_type;return vol_type;165
+Test_61;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/volume_types.py;None;get_volume_type_qos_specs;return res;268
+Test_62;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/rpcapi.py;VolumeAPI;detach_volume;return cctxt.call(ctxt, 'detach_volume', **msg_args);216
+Test_63;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/rpcapi.py;VolumeAPI;attach_volume;return cctxt.call(ctxt, 'attach_volume', **msg_args);207
+Test_64;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/utils.py;None;_usage_from_volume;return usage_info;101
+Test_65;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;return attachment;1232
+Test_66;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;get_volume_stats;return self._stats;582
+Test_67;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/api.py;API;update_volume_admin_metadata;return db_meta;1186
+Test_68;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/api.py;API;get_list_volumes_image_metadata;return results;1259
+Test_69;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/flows/api/create_volume.py;ExtractVolumeRequestTask;_get_volume_type_id;return volume_type.get('id');421
+Test_70;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/volume/flows/api/create_volume.py;ExtractVolumeRequestTask;_extract_source_volume;return self._extract_resource(source_volume, (SRC_VOL_PROCEED_STATUS,), exception.InvalidVolume, 'source volume');136
+Test_71;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_attached;return IMPL.volume_attached(context, volume_id, instance_id, host_name, mountpoint, attach_mode);228
+Test_72;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_admin_metadata_update;return IMPL.volume_admin_metadata_update(context, volume_id, metadata, delete, add, update);562
+Test_73;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_glance_metadata_delete_by_volume;return IMPL.volume_glance_metadata_delete_by_volume(context, volume_id);991
+Test_74;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_type_get_by_name;return IMPL.volume_type_get_by_name(context, name);626
+Test_75;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_type_encryption_get;return IMPL.volume_type_encryption_get(context, volume_type_id, session);840
+Test_76;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_type_qos_specs_get;return IMPL.volume_type_qos_specs_get(context, type_id);659
+Test_77;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_detached;return IMPL.volume_detached(context, volume_id, attachment_id);256
+Test_78;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_glance_metadata_get;return IMPL.volume_glance_metadata_get(context, volume_id);955
+Test_79;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_type_get_all;return IMPL.volume_type_get_all(context, inactive, filters, marker=marker, limit=limit, sort_keys=sort_keys, sort_dirs=sort_dirs, offset=offset, list_result=list_result);605
+Test_80;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_create;return IMPL.volume_create(context, values);234
+Test_81;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_get;return IMPL.volume_get(context, volume_id);261
+Test_82;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;image_volume_cache_get_by_volume_id;return IMPL.image_volume_cache_get_by_volume_id(context, volume_id);1636
+Test_83;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_attach;return IMPL.volume_attach(context, values);222
+Test_84;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_destroy;return IMPL.volume_destroy(context, volume_id);251
+Test_85;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_admin_metadata_delete;return IMPL.volume_admin_metadata_delete(context, volume_id, key);556
+Test_86;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_has_snapshots_filter;return IMPL.volume_has_snapshots_filter();393
+Test_87;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_get_all_by_project;return IMPL.volume_get_all_by_project(context, project_id, marker, limit, sort_keys=sort_keys, sort_dirs=sort_dirs, filters=filters, offset=offset);292
+Test_88;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_attachment_get_all_by_volume_id;return IMPL.volume_attachment_get_all_by_volume_id(context, volume_id, session);350
+Test_89;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_attachment_get_all_by_instance_uuid;return IMPL.volume_attachment_get_all_by_instance_uuid(context, instance_uuid);363
+Test_90;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_update;return IMPL.volume_update(context, volume_id, values);310
+Test_91;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_metadata_get;return IMPL.volume_metadata_get(context, volume_id);529
+Test_92;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/api.py;None;volume_admin_metadata_get;return IMPL.volume_admin_metadata_get(context, volume_id);551
+Test_93;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_detached;return (volume_updates, attachment_updates);1721
+Test_94;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_get_query;return model_query(context, models.Volume, session=session, project_only=project_only);1781
+Test_95;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_admin_metadata_update;return _volume_admin_metadata_update(context, volume_id, metadata, delete, add=add, update=update);2850
+Test_96;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_get_by_name;return _volume_type_get_by_name(context, name);3822
+Test_97;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_type_get_query;return query;3392
+Test_98;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_process_volume_types_filters;return query;3449
+Test_99;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_get_all;return result;3584
+Test_100;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_type_get_db_object;return result;3676
+Test_101;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_get;return _volume_type_get(context, id, session=None, inactive=inactive, expected_fields=expected_fields);3730
+Test_102;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_metadata_get;return _volume_user_metadata_get(context, volume_id);2760
+Test_103;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_get;return _volume_get(context, volume_id);2043
+Test_104;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_qos_specs_get;return {'qos_specs';3948
+Test_105;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_type_get;return vtype;3706
+Test_106;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_has_snapshots_filter;return sql.exists().where(and_((models.Volume.id == models.Snapshot.volume_id), (~ models.Snapshot.deleted)));2544
+Test_107;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_encryption_get;return model_query(context, models.Encryption, session=session, read_deleted='no').filter_by(volume_type_id=volume_type_id).first();4645
+Test_108;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_data_get_for_project;return ((result[0] or 0), (result[1] or 0));1543
+Test_109;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_type_get_full;return _volume_type_get(context, id, session=None, inactive=False, expected_fields=('extra_specs', 'projects'));3748
+Test_110;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_glance_metadata_list_get;return query.all();4751
+Test_111;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_glance_metadata_get;return rows;4765
+Test_112;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_glance_metadata_get;return _volume_glance_metadata_get(context, volume_id);4772
+Test_113;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_x_metadata_update;return result;2701
+Test_114;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_user_metadata_get;return _volume_x_metadata_get(context, volume_id, models.VolumeMetadata, session=session);2717
+Test_115;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;image_volume_cache_get_by_volume_id;return session.query(models.ImageVolumeCacheEntry).filter_by(volume_id=volume_id).first();6544
+Test_116;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_sync_volumes;return {key;302
+Test_117;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_attach;return _attachment_get(context, values['id'], session=session);1430
+Test_118;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_attached;return (volume_ref, updated_values);1468
+Test_119;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_create;return _volume_get(context, values['id'], session=session);1492
+Test_120;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_admin_metadata_get;return _volume_x_metadata_get(context, volume_id, models.VolumeAdminMetadata, session=session);2817
+Test_121;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_admin_metadata_update;return _volume_x_metadata_update(context, volume_id, metadata, delete, models.VolumeAdminMetadata, session=session, add=add, update=update);2825
+Test_122;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;_volume_type_get_by_name;return _dict_with_extra_specs_if_authorized(context, result);3802
+Test_123;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_admin_metadata_get;return _volume_admin_metadata_get(context, volume_id);2832
+Test_124;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_destroy;return updated_values;1600
+Test_125;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/api/openstack/wsgi.py;Request;get_db_volume;return (self.get_db_item('volumes', volume_id) or self.get_db_item(self.path, volume_id));194
+Test_126;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/api/v2/volumes.py;VolumeController;_get_volume_filter_options;return CONF.query_volume_filters;289
+Test_127;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/api/v2/views/volumes.py;ViewBuilder;_get_volume_type;return volume['volume_type']['name'];143
+Test_128;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/api/v2/views/volumes.py;ViewBuilder;_is_volume_encrypted;return (volume.get('encryption_key_id') is not None);113
+Test_129;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/api/v2/views/volumes.py;ViewBuilder;_get_volume_status;return status_map.get(vol_status, vol_status);66
+Test_130;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/api/v2/views/volumes.py;ViewBuilder;_get_volume_metadata;return volume.metadata;138
+Test_131;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/brick/local_dev/lvm.py;LVM;get_volume;return r;338
+Test_132;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/brick/local_dev/lvm.py;LVM;get_volumes;return self.get_lv_info(self._root_helper, self.vg_name, lv_name);325
+Test_133;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/brick/local_dev/lvm.py;LVM;get_all_volume_groups;return vg_list;407
+Test_134;OPENSTACK_WRONG_RETURN_VALUE-VOLUME;/cinder/image/cache.py;ImageVolumeCache;get_by_image_volume;return self.db.image_volume_cache_get_by_volume_id(context, volume_id);41
+Test_135;OPENSTACK_WRONG_PARAMETERS-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_handle_bootable_volume_glance_meta;self._capture_volume_image_metadata(context, volume.id, image_id, image_meta);438
+Test_136;OPENSTACK_WRONG_PARAMETERS-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._copy_image_to_volume(context, volume, image_meta, image_location, image_service);697
+Test_137;OPENSTACK_WRONG_PARAMETERS-IMAGE;/cinder/api/contrib/volume_image_metadata.py;VolumeImageMetadataController;detail;self._add_image_metadata(context, volumes);85
+Test_138;OPENSTACK_WRONG_PARAMETERS-IMAGE;/cinder/image/image_utils.py;None;fetch_to_volume_format;convert_image(tmp, dest, volume_format, src_format=disk_format, run_as_root=run_as_root);420
+Test_139;OPENSTACK_WRONG_PARAMETERS-IMAGE;/cinder/image/image_utils.py;TemporaryImages;fetch;fetch_verify_image(context, image_service, image_id, tmp);666
+Test_140;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/cinder/db/api.py;None;volume_attachment_get_all_by_instance_uuid;return IMPL.volume_attachment_get_all_by_instance_uuid(context, instance_uuid);363
+Test_141;OPENSTACK_WRONG_RETURN_VALUE-INSTANCE;/cinder/db/sqlalchemy/api.py;None;volume_attachment_get_all_by_instance_uuid;return result;1924
+Test_142;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;_choose_top_backend;backend_state.consume_from_volume(volume_properties);545
+Test_143;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;_populate_retry;self._log_volume_error(volume_id, retry);260
+Test_144;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/scheduler/host_manager.py;BackendState;update_pools;cur_pool.update_from_volume_capability(pool_cap, service);227
+Test_145;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/objects/volume.py;Volume;save;db.volume_update(self._context, self.id, updates);389
+Test_146;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/api.py;API;delete;self.volume_rpcapi.delete_volume(context, volume, unmanage_only, cascade);532
+Test_147;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/api.py;API;terminate_connection;self.unreserve_volume(context, volume);810
+Test_148;OPENSTACK_MISSING_PARAMETERS-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._copy_image_to_volume(context, volume, image_meta, image_location, image_service);697
+Test_149;OPENSTACK_MISSING_PARAMETERS-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_copy_image_to_volume;self.driver.copy_image_to_volume(context, volume, image_service, image_id);554
+Test_150;OPENSTACK_MISSING_PARAMETERS-IMAGE;/cinder/api/contrib/volume_image_metadata.py;VolumeImageMetadataController;detail;self._add_image_metadata(context, volumes);85
+Test_151;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.db.volume_glance_metadata_delete_by_volume(context, volume.id);815
+Test_152;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);825
+Test_153;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.end');1229
+Test_154;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.start');1181
+Test_155;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self.driver.attach_volume(context, volume, instance_uuid, host_name_sanitized, mountpoint);1207
+Test_156;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);745
+Test_157;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self.driver.detach_volume(context, volume, attachment);1293
+Test_158;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.end');1324
+Test_159;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;QUOTAS.add_volume_type_opts(context, reserve_opts, volume.volume_type_id);804
+Test_160;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;_report_driver_status;self._append_volume_stats(volume_stats);2415
+Test_161;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;_notify_about_volume_usage;vol_utils.notify_about_volume_usage(context, volume, event_suffix, extra_usage_info=extra_usage_info, host=self.host);2477
+Test_162;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.driver.delete_volume(volume);775
+Test_163;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.start');1281
+Test_164;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;delete_volume;self._delete_volume(volume);459
+Test_165;OPENSTACK_MISSING_PARAMETERS-IMAGE;/cinder/image/image_utils.py;TemporaryImages;fetch;fetch_verify_image(context, image_service, image_id, tmp);666
+Test_166;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;create_volume;self._create_volume(volume['name'], self._sizestr(volume['size']), self.configuration.lvm_type, mirror_count);370
+Test_167;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;_create_volume;vg_ref.create_volume(name, size, lvm_type, mirror_count);200
+Test_168;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/flows/api/create_volume.py;VolumeCastTask;_cast_create_volume;self.scheduler_rpcapi.create_volume(context, volume, snapshot_id=snapshot_id, image_id=image_id, request_spec=request_spec, filter_properties=filter_properties);790
+Test_169;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/flows/api/create_volume.py;VolumeCastTask;execute;self._cast_create_volume(context, request_spec, filter_properties);824
+Test_170;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_capture_volume_image_metadata;self.db.volume_glance_metadata_bulk_create(context, volume_id, volume_metadata);617
+Test_171;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._copy_image_to_volume(context, volume, image_meta, image_location, image_service);697
+Test_172;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_handle_bootable_volume_glance_meta;self._capture_volume_image_metadata(context, volume.id, image_id, image_meta);438
+Test_173;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_qos_specs_get;_volume_type_get(context, type_id, session);3932
+Test_174;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/v2/volumes.py;VolumeController;_get_volumes;req.cache_db_volumes(volumes.objects);122
+Test_175;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/contrib/volume_mig_status_attribute.py;VolumeMigStatusAttributeController;show;self._add_volume_mig_status_attribute(req, resp_obj.obj['volume']);34
+Test_176;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/contrib/volume_host_attribute.py;VolumeHostAttributeController;show;self._add_volume_host_attribute(req, volume);34
+Test_177;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/contrib/volume_tenant_attribute.py;VolumeTenantAttributeController;detail;self._add_volume_tenant_attribute(req, vol);41
+Test_178;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;req.cache_db_volumes(volumes.objects);135
+Test_179;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;self._process_volume_filtering(context=context, filters=filters, req_version=req_version);112
+Test_180;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;self.volume_api.check_volume_filters(filters, strict);123
+Test_181;OPENSTACK_THROW_EXCEPTION-VOLUME;/cinder/api/contrib/volume_actions.py;VolumeActionsController;_reserve;self.volume_api.reserve_volume(context, volume);141
+Test_182;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;_choose_top_backend;backend_state.consume_from_volume(volume_properties);545
+Test_183;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;_populate_retry;self._log_volume_error(volume_id, retry);260
+Test_184;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;schedule_create_volume;self.volume_rpcapi.create_volume(context, updated_volume, request_spec, filter_properties, allow_reschedule=True);108
+Test_185;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/scheduler/host_manager.py;BackendState;update_pools;cur_pool.update_from_volume_capability(pool_cap, service);227
+Test_186;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/objects/volume.py;Volume;save;db.volume_update(self._context, self.id, updates);389
+Test_187;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/api.py;API;delete;self.volume_rpcapi.delete_volume(context, volume, unmanage_only, cascade);532
+Test_188;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/api.py;API;terminate_connection;self.unreserve_volume(context, volume);810
+Test_189;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self.driver.attach_volume(context, volume, instance_uuid, host_name_sanitized, mountpoint);1207
+Test_190;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);745
+Test_191;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.driver.delete_volume(volume);775
+Test_192;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;QUOTAS.add_volume_type_opts(context, reserve_opts, volume.volume_type_id);804
+Test_193;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.db.volume_glance_metadata_delete_by_volume(context, volume.id);815
+Test_194;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);825
+Test_195;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;_report_driver_status;self._append_volume_stats(volume_stats);2415
+Test_196;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;_notify_about_volume_usage;vol_utils.notify_about_volume_usage(context, volume, event_suffix, extra_usage_info=extra_usage_info, host=self.host);2477
+Test_197;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.end');1229
+Test_198;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.start');1181
+Test_199;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.start');1281
+Test_200;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self.driver.detach_volume(context, volume, attachment);1293
+Test_201;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.end');1324
+Test_202;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;create_volume;self._create_volume(volume['name'], self._sizestr(volume['size']), self.configuration.lvm_type, mirror_count);370
+Test_203;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;get_volume_stats;self._update_volume_stats();580
+Test_204;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;delete_volume;self._delete_volume(volume);459
+Test_205;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;_update_volume_stats;self.vg.update_volume_group_info();212
+Test_206;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;_create_volume;vg_ref.create_volume(name, size, lvm_type, mirror_count);200
+Test_207;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/api/create_volume.py;VolumeCastTask;_cast_create_volume;self.scheduler_rpcapi.create_volume(context, volume, snapshot_id=snapshot_id, image_id=image_id, request_spec=request_spec, filter_properties=filter_properties);790
+Test_208;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/api/create_volume.py;QuotaReserveTask;execute;QUOTAS.add_volume_type_opts(context, reserve_opts, volume_type_id);652
+Test_209;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_copy_image_to_volume;self.driver.copy_image_to_volume(context, volume, image_service, image_id);554
+Test_210;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._cleanup_cg_in_volume(volume);686
+Test_211;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._copy_image_to_volume(context, volume, image_meta, image_location, image_service);697
+Test_212;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_handle_bootable_volume_glance_meta;self._capture_volume_image_metadata(context, volume.id, image_id, image_meta);438
+Test_213;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;NotifyVolumeActionTask;execute;volume_utils.notify_about_volume_usage(context, volume, self.event_suffix, host=volume.host);355
+Test_214;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image;self._handle_bootable_volume_glance_meta(context, volume, image_id=image_id, image_meta=image_meta);955
+Test_215;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_capture_volume_image_metadata;self.db.volume_glance_metadata_bulk_create(context, volume_id, volume_metadata);617
+Test_216;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_qos_specs_get;_volume_type_get(context, type_id, session);3932
+Test_217;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/v2/volumes.py;VolumeController;_get_volumes;req.cache_db_volumes(volumes.objects);122
+Test_218;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/v2/volumes.py;VolumeController;_get_volumes;self.volume_api.check_volume_filters(filters);111
+Test_219;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_mig_status_attribute.py;VolumeMigStatusAttributeController;detail;self._add_volume_mig_status_attribute(req, vol);41
+Test_220;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_mig_status_attribute.py;VolumeMigStatusAttributeController;show;self._add_volume_mig_status_attribute(req, resp_obj.obj['volume']);34
+Test_221;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_host_attribute.py;VolumeHostAttributeController;show;self._add_volume_host_attribute(req, volume);34
+Test_222;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_host_attribute.py;VolumeHostAttributeController;detail;self._add_volume_host_attribute(req, vol);41
+Test_223;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_tenant_attribute.py;VolumeTenantAttributeController;detail;self._add_volume_tenant_attribute(req, vol);41
+Test_224;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_tenant_attribute.py;VolumeTenantAttributeController;show;self._add_volume_tenant_attribute(req, volume);34
+Test_225;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/contrib/volume_actions.py;VolumeActionsController;_reserve;self.volume_api.reserve_volume(context, volume);141
+Test_226;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;self.volume_api.check_volume_filters(filters, strict);123
+Test_227;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;req.cache_db_volumes(volumes.objects);135
+Test_228;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;self._process_volume_filtering(context=context, filters=filters, req_version=req_version);112
+Test_229;OPENSTACK_MISSING_FUNCTION_CALL-VOLUME;/cinder/image/image_utils.py;None;fetch_to_raw;fetch_to_volume_format(context, image_service, image_id, dest, 'raw', blocksize, user_id, project_id, size, run_as_root=run_as_root);337
+Test_230;OPENSTACK_THROW_EXCEPTION-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_copy_image_to_volume;self.driver.copy_image_to_volume(context, volume, image_service, image_id);554
+Test_231;OPENSTACK_THROW_EXCEPTION-IMAGE;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_handle_bootable_volume_glance_meta;self._capture_volume_image_metadata(context, volume.id, image_id, image_meta);438
+Test_232;OPENSTACK_THROW_EXCEPTION-IMAGE;/cinder/api/contrib/volume_image_metadata.py;VolumeImageMetadataController;detail;self._add_image_metadata(context, volumes);85
+Test_233;OPENSTACK_THROW_EXCEPTION-IMAGE;/cinder/image/image_utils.py;TemporaryImages;fetch;fetch_verify_image(context, image_service, image_id, tmp);666
+Test_234;OPENSTACK_WRONG_RETURN_VALUE-RPC;/cinder/objects/cleanable.py;CinderCleanableObject;get_rpc_api;return vol_rpcapi.VolumeAPI;40
+Test_235;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/scheduler/filter_scheduler.py;FilterScheduler;schedule_create_volume;self.volume_rpcapi.create_volume(context, updated_volume, request_spec, filter_properties, allow_reschedule=True);108
+Test_236;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/scheduler/host_manager.py;BackendState;update_pools;cur_pool.update_from_volume_capability(pool_cap, service);227
+Test_237;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/scheduler/host_manager.py;HostManager;_update_backend_state_map;backend_state.update_from_volume_capability(capabilities, service=dict(service));610
+Test_238;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/scheduler/flows/create_volume.py;ScheduleCreateVolumeTask;execute;self.driver_api.schedule_create_volume(context, request_spec, filter_properties);121
+Test_239;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/objects/volume.py;Volume;save;db.volume_update(self._context, self.id, updates);389
+Test_240;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/api.py;API;terminate_connection;self.unreserve_volume(context, volume);810
+Test_241;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.driver.delete_volume(volume);775
+Test_242;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;_report_driver_status;self._append_volume_stats(volume_stats);2415
+Test_243;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;QUOTAS.add_volume_type_opts(context, reserve_opts, volume.volume_type_id);804
+Test_244;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self.db.volume_glance_metadata_delete_by_volume(context, volume.id);815
+Test_245;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);825
+Test_246;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self.driver.attach_volume(context, volume, instance_uuid, host_name_sanitized, mountpoint);1207
+Test_247;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;delete_volume;self._notify_about_volume_usage(context, volume, notification);745
+Test_248;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self.driver.detach_volume(context, volume, attachment);1293
+Test_249;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.end');1324
+Test_250;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;detach_volume;self._notify_about_volume_usage(context, volume, 'detach.start');1281
+Test_251;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;_notify_about_volume_usage;vol_utils.notify_about_volume_usage(context, volume, event_suffix, extra_usage_info=extra_usage_info, host=self.host);2477
+Test_252;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.end');1229
+Test_253;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/manager.py;VolumeManager;attach_volume;self._notify_about_volume_usage(context, volume, 'attach.start');1181
+Test_254;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;delete_volume;self._delete_volume(volume);459
+Test_255;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;create_volume;self._create_volume(volume['name'], self._sizestr(volume['size']), self.configuration.lvm_type, mirror_count);370
+Test_256;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/drivers/lvm.py;LVMVolumeDriver;_create_volume;vg_ref.create_volume(name, size, lvm_type, mirror_count);200
+Test_257;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/flows/api/create_volume.py;QuotaReserveTask;execute;QUOTAS.add_volume_type_opts(context, reserve_opts, volume_type_id);652
+Test_258;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/flows/api/create_volume.py;VolumeCastTask;execute;self._cast_create_volume(context, request_spec, filter_properties);824
+Test_259;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image_download;self._copy_image_to_volume(context, volume, image_meta, image_location, image_service);697
+Test_260;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_capture_volume_image_metadata;self.db.volume_glance_metadata_bulk_create(context, volume_id, volume_metadata);617
+Test_261;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/volume/flows/manager/create_volume.py;CreateVolumeFromSpecTask;_create_from_image;self._handle_bootable_volume_glance_meta(context, volume, image_id=image_id, image_meta=image_meta);955
+Test_262;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/db/sqlalchemy/api.py;None;volume_type_qos_specs_get;_volume_type_get(context, type_id, session);3932
+Test_263;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/api/v2/volumes.py;VolumeController;show;req.cache_db_volume(vol);60
+Test_264;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/api/contrib/volume_mig_status_attribute.py;VolumeMigStatusAttributeController;show;self._add_volume_mig_status_attribute(req, resp_obj.obj['volume']);34
+Test_265;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/api/contrib/volume_host_attribute.py;VolumeHostAttributeController;show;self._add_volume_host_attribute(req, volume);34
+Test_266;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/api/contrib/volume_tenant_attribute.py;VolumeTenantAttributeController;show;self._add_volume_tenant_attribute(req, volume);34
+Test_267;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/api/contrib/volume_actions.py;VolumeActionsController;_reserve;self.volume_api.reserve_volume(context, volume);141
+Test_268;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/api/v3/volumes.py;VolumeController;_get_volumes;self.volume_api.check_volume_filters(filters, strict);123
+Test_269;OPENSTACK_WRONG_PARAMETERS-VOLUME;/cinder/image/image_utils.py;None;fetch_to_raw;fetch_to_volume_format(context, image_service, image_id, dest, 'raw', blocksize, user_id, project_id, size, run_as_root=run_as_root);337

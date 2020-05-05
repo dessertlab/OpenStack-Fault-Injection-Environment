@@ -1,0 +1,204 @@
+Test_id;Fault_Type;Target_Component;Target_Class;Target_Function;Fault_Location;Line
+Test_1;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;_add_network_segment;segments_db.add_network_segment(context, network_id, segment, segment_index);189
+Test_2;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_ml2_md_extend_network_dict;plugin.extension_manager.extend_network_dict(session, netdb, result);635
+Test_3;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.mechanism_manager.create_network_precommit(mech_context);827
+Test_4;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_precommit_handler;self.mechanism_manager.delete_network_precommit(mech_context);998
+Test_5;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;create_network;self._before_create_network(context, network);833
+Test_6;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.mechanism_manager.delete_network_postcommit(context._mech_context);1005
+Test_7;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_after_create_network;self.mechanism_manager.create_network_postcommit(mech_context);841
+Test_8;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.notifier.network_delete(context, network['id']);1013
+Test_9;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_handle_segment_change;self.type_manager.release_network_segment(context, segment);1888
+Test_10;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;extend_networks_dict_provider;self._extend_network_dict_provider(network, segments);161
+Test_11;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_subnet_db;self.type_manager.extend_network_dict_provider(context, network);1033
+Test_12;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_postcommit(mech_context);1916
+Test_13;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_precommit(mech_context);1914
+Test_14;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.create_network_segments(context, net_data, tenant_id);792
+Test_15;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.extension_manager.process_create_network(context, {k;799
+Test_16;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.extend_network_dict_provider(context, result);806
+Test_17;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_network;self.type_manager.extend_network_dict_provider(context, net_data);939
+Test_18;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_networks;self.type_manager.extend_networks_dict_provider(context, net_data);961
+Test_19;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;treat_devices_added_or_updated;self._update_port_network(details['port_id'], details['network_id']);1569
+Test_20;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;process_deleted_ports;self._clean_network_ports(port_id);454
+Test_21;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;_update_port_network;self._clean_network_ports(port_id);1582
+Test_22;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/extensions/port_security.py;PortSecurityExtensionDriver;process_create_network;self._process_network_port_security_create(context, data, result);44
+Test_23;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/db/ipam_backend_mixin.py;IpamBackendMixin;_save_subnet;self._validate_network_subnetpools(network, subnet_args['subnetpool_id'], subnet_args['ip_version']);504
+Test_24;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/db/agentschedulers_db.py;DhcpAgentSchedulerDbMixin;auto_schedule_networks;self.network_scheduler.auto_schedule_networks(self, context, host);513
+Test_25;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;delete_network;self._ensure_network_not_in_use(context, id);454
+Test_26;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;create_port_db;self._get_network(context, network_id);1286
+Test_27;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;safe_configure_dhcp_for_network;self.configure_dhcp_for_network(network);284
+Test_28;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;enable_dhcp_helper;self.configure_dhcp_for_network(network);277
+Test_29;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;internal_network_added;self._internal_network_added(self.ns_name, network_id, port_id, fixed_ips, mac_address, interface_name, INTERNAL_DEV_PREFIX, mtu=port.get('mtu'));465
+Test_30;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_removed(p);566
+Test_31;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_added(p);554
+Test_32;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;create_network_segments;self._add_network_segment(context, network_id, segment);209
+Test_33;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/api/v2/base.py;Controller;_create;self._validate_network_tenant_ownership(request, item[self._resource]);460
+Test_34;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;_get_active_networks;plugin.auto_schedule_networks(context, host);86
+Test_35;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/pecan_wsgi/hooks/ownership_validation.py;OwnershipValidationHook;before;self._validate_network_tenant_ownership(state, item);31
+Test_36;OPENSTACK_THROW_EXCEPTION-NETWORK;/neutron/notifiers/nova.py;Notifier;_send_nova_notification;self.send_network_change(action, original, data);102
+Test_37;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;create_network_segments;self._add_network_segment(context, network_id, segment);209
+Test_38;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;_add_network_segment;segments_db.add_network_segment(context, network_id, segment, segment_index);189
+Test_39;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;extend_networks_dict_provider;self._extend_network_dict_provider(network, segments);161
+Test_40;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_postcommit(mech_context);1916
+Test_41;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.create_network_segments(context, net_data, tenant_id);792
+Test_42;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.extension_manager.process_create_network(context, {k;799
+Test_43;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.extend_network_dict_provider(context, result);806
+Test_44;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_network;self.type_manager.extend_network_dict_provider(context, net_data);939
+Test_45;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.mechanism_manager.create_network_precommit(mech_context);827
+Test_46;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_networks;self.type_manager.extend_networks_dict_provider(context, net_data);961
+Test_47;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;create_network;self._before_create_network(context, network);833
+Test_48;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_precommit_handler;self.mechanism_manager.delete_network_precommit(mech_context);998
+Test_49;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.mechanism_manager.delete_network_postcommit(context._mech_context);1005
+Test_50;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_after_create_network;self.mechanism_manager.create_network_postcommit(mech_context);841
+Test_51;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_ml2_md_extend_network_dict;plugin.extension_manager.extend_network_dict(session, netdb, result);635
+Test_52;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.notifier.network_delete(context, network['id']);1013
+Test_53;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_handle_segment_change;self.type_manager.release_network_segment(context, segment);1888
+Test_54;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_subnet_db;self.type_manager.extend_network_dict_provider(context, network);1033
+Test_55;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_precommit(mech_context);1914
+Test_56;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/notifiers/nova.py;Notifier;_send_nova_notification;self.send_network_change(action, original, data);102
+Test_57;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;treat_devices_added_or_updated;self._update_port_network(details['port_id'], details['network_id']);1569
+Test_58;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;process_deleted_ports;self._clean_network_ports(port_id);454
+Test_59;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;_update_port_network;self._clean_network_ports(port_id);1582
+Test_60;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/pecan_wsgi/hooks/ownership_validation.py;OwnershipValidationHook;before;self._validate_network_tenant_ownership(state, item);31
+Test_61;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/plugins/ml2/extensions/port_security.py;PortSecurityExtensionDriver;process_create_network;self._process_network_port_security_create(context, data, result);44
+Test_62;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;safe_configure_dhcp_for_network;self.configure_dhcp_for_network(network);284
+Test_63;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;enable_dhcp_helper;self.configure_dhcp_for_network(network);277
+Test_64;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_removed(p);566
+Test_65;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;internal_network_added;self._internal_network_added(self.ns_name, network_id, port_id, fixed_ips, mac_address, interface_name, INTERNAL_DEV_PREFIX, mtu=port.get('mtu'));465
+Test_66;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_added(p);554
+Test_67;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/api/v2/base.py;Controller;_create;self._validate_network_tenant_ownership(request, item[self._resource]);460
+Test_68;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;_get_active_networks;plugin.auto_schedule_networks(context, host);86
+Test_69;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/db/agentschedulers_db.py;DhcpAgentSchedulerDbMixin;auto_schedule_networks;self.network_scheduler.auto_schedule_networks(self, context, host);513
+Test_70;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/db/ipam_backend_mixin.py;IpamBackendMixin;_save_subnet;self._validate_network_subnetpools(network, subnet_args['subnetpool_id'], subnet_args['ip_version']);504
+Test_71;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;delete_network;self._ensure_network_not_in_use(context, id);454
+Test_72;OPENSTACK_MISSING_FUNCTION_CALL-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;create_port_db;self._get_network(context, network_id);1286
+Test_73;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/db/agentschedulers_db.py;DhcpAgentSchedulerDbMixin;auto_schedule_networks;self.network_scheduler.auto_schedule_networks(self, context, host);513
+Test_74;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;delete_network;self._ensure_network_not_in_use(context, id);454
+Test_75;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/notifiers/nova.py;Notifier;_send_nova_notification;self.send_network_change(action, original, data);102
+Test_76;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;_add_network_segment;segments_db.add_network_segment(context, network_id, segment, segment_index);189
+Test_77;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;extend_networks_dict_provider;self._extend_network_dict_provider(network, segments);161
+Test_78;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;create_network_segments;self._add_network_segment(context, network_id, segment);209
+Test_79;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.create_network_segments(context, net_data, tenant_id);792
+Test_80;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.extension_manager.process_create_network(context, {k;799
+Test_81;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.extend_network_dict_provider(context, result);806
+Test_82;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_network;self.type_manager.extend_network_dict_provider(context, net_data);939
+Test_83;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_networks;self.type_manager.extend_networks_dict_provider(context, net_data);961
+Test_84;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;create_port_db;self._get_network(context, network_id);1286
+Test_85;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.mechanism_manager.create_network_precommit(mech_context);827
+Test_86;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_ml2_md_extend_network_dict;plugin.extension_manager.extend_network_dict(session, netdb, result);635
+Test_87;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;create_network;self._before_create_network(context, network);833
+Test_88;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_precommit_handler;self.mechanism_manager.delete_network_precommit(mech_context);998
+Test_89;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.mechanism_manager.delete_network_postcommit(context._mech_context);1005
+Test_90;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_handle_segment_change;self.type_manager.release_network_segment(context, segment);1888
+Test_91;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_after_create_network;self.mechanism_manager.create_network_postcommit(mech_context);841
+Test_92;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.notifier.network_delete(context, network['id']);1013
+Test_93;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_subnet_db;self.type_manager.extend_network_dict_provider(context, network);1033
+Test_94;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_precommit(mech_context);1914
+Test_95;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_postcommit(mech_context);1916
+Test_96;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/extensions/port_security.py;PortSecurityExtensionDriver;process_create_network;self._process_network_port_security_create(context, data, result);44
+Test_97;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;treat_devices_added_or_updated;self._update_port_network(details['port_id'], details['network_id']);1569
+Test_98;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;process_deleted_ports;self._clean_network_ports(port_id);454
+Test_99;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;_update_port_network;self._clean_network_ports(port_id);1582
+Test_100;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/db/ipam_backend_mixin.py;IpamBackendMixin;_save_subnet;self._validate_network_subnetpools(network, subnet_args['subnetpool_id'], subnet_args['ip_version']);504
+Test_101;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/pecan_wsgi/hooks/ownership_validation.py;OwnershipValidationHook;before;self._validate_network_tenant_ownership(state, item);31
+Test_102;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;internal_network_added;self._internal_network_added(self.ns_name, network_id, port_id, fixed_ips, mac_address, interface_name, INTERNAL_DEV_PREFIX, mtu=port.get('mtu'));465
+Test_103;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_removed(p);566
+Test_104;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_added(p);554
+Test_105;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;enable_dhcp_helper;self.configure_dhcp_for_network(network);277
+Test_106;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;safe_configure_dhcp_for_network;self.configure_dhcp_for_network(network);284
+Test_107;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/api/v2/base.py;Controller;_create;self._validate_network_tenant_ownership(request, item[self._resource]);460
+Test_108;OPENSTACK_MISSING_PARAMETERS-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;_get_active_networks;plugin.auto_schedule_networks(context, host);86
+Test_109;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/pecan_wsgi/hooks/ownership_validation.py;OwnershipValidationHook;before;self._validate_network_tenant_ownership(state, item);31
+Test_110;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_added(p);554
+Test_111;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;_process_internal_ports;self.internal_network_removed(p);566
+Test_112;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/agent/l3/router_info.py;RouterInfo;internal_network_added;self._internal_network_added(self.ns_name, network_id, port_id, fixed_ips, mac_address, interface_name, INTERNAL_DEV_PREFIX, mtu=port.get('mtu'));465
+Test_113;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;create_network_segments;self._add_network_segment(context, network_id, segment);209
+Test_114;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;_add_network_segment;segments_db.add_network_segment(context, network_id, segment, segment_index);189
+Test_115;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;extend_networks_dict_provider;self._extend_network_dict_provider(network, segments);161
+Test_116;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_precommit(mech_context);1914
+Test_117;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_networks;self.type_manager.extend_networks_dict_provider(context, net_data);961
+Test_118;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.create_network_segments(context, net_data, tenant_id);792
+Test_119;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.extension_manager.process_create_network(context, {k;799
+Test_120;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.type_manager.extend_network_dict_provider(context, result);806
+Test_121;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_network;self.type_manager.extend_network_dict_provider(context, net_data);939
+Test_122;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_ml2_md_extend_network_dict;plugin.extension_manager.extend_network_dict(session, netdb, result);635
+Test_123;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;self.mechanism_manager.create_network_precommit(mech_context);827
+Test_124;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_precommit_handler;self.mechanism_manager.delete_network_precommit(mech_context);998
+Test_125;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;create_network;self._before_create_network(context, network);833
+Test_126;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.mechanism_manager.delete_network_postcommit(context._mech_context);1005
+Test_127;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_after_create_network;self.mechanism_manager.create_network_postcommit(mech_context);841
+Test_128;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_network_delete_after_delete_handler;self.notifier.network_delete(context, network['id']);1013
+Test_129;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_handle_segment_change;self.type_manager.release_network_segment(context, segment);1888
+Test_130;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_subnet_db;self.type_manager.extend_network_dict_provider(context, network);1033
+Test_131;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_notify_mechanism_driver_for_segment_change;self.mechanism_manager.update_network_postcommit(mech_context);1916
+Test_132;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;_get_active_networks;plugin.auto_schedule_networks(context, host);86
+Test_133;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;process_deleted_ports;self._clean_network_ports(port_id);454
+Test_134;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;treat_devices_added_or_updated;self._update_port_network(details['port_id'], details['network_id']);1569
+Test_135;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;_update_port_network;self._clean_network_ports(port_id);1582
+Test_136;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/plugins/ml2/extensions/port_security.py;PortSecurityExtensionDriver;process_create_network;self._process_network_port_security_create(context, data, result);44
+Test_137;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/api/v2/base.py;Controller;_create;self._validate_network_tenant_ownership(request, item[self._resource]);460
+Test_138;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;enable_dhcp_helper;self.configure_dhcp_for_network(network);277
+Test_139;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/db/agentschedulers_db.py;DhcpAgentSchedulerDbMixin;auto_schedule_networks;self.network_scheduler.auto_schedule_networks(self, context, host);513
+Test_140;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/db/ipam_backend_mixin.py;IpamBackendMixin;_save_subnet;self._validate_network_subnetpools(network, subnet_args['subnetpool_id'], subnet_args['ip_version']);504
+Test_141;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;delete_network;self._ensure_network_not_in_use(context, id);454
+Test_142;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;safe_configure_dhcp_for_network;self.configure_dhcp_for_network(network);284
+Test_143;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;create_port_db;self._get_network(context, network_id);1286
+Test_144;OPENSTACK_WRONG_PARAMETERS-NETWORK;/neutron/notifiers/nova.py;Notifier;_send_nova_notification;self.send_network_change(action, original, data);102
+Test_145;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/external_net_db.py;None;_network_filter_hook;return conditions;56
+Test_146;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/external_net_db.py;None;_network_result_filter_hook;return query.filter(models_v2.Network.external.has());64
+Test_147;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/external_net_db.py;External_net_db_mixin;_extend_network_dict_l3;return network_res;91
+Test_148;OPENSTACK_WRONG_RETURN_VALUE-RPC;/neutron/db/l3_db.py;L3RpcNotifierMixin;l3_rpc_notifier;return self._l3_rpc_notifier;1808
+Test_149;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/agentschedulers_db.py;DhcpAgentSchedulerDbMixin;list_active_networks_on_active_dhcp_agent;return self.get_networks(context, filters={'id';489
+Test_150;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/agentschedulers_db.py;DhcpAgentSchedulerDbMixin;schedule_network;return self.network_scheduler.schedule(self, context, created_network);508
+Test_151;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/agentschedulers_db.py;AZDhcpAgentSchedulerDbMixin;get_network_availability_zones;return list(zones);522
+Test_152;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/portsecurity_db_common.py;PortSecurityDbCommon;_get_network_security_binding;return self._get_security_binding(context, network.NetworkPortSecurity, network_id);63
+Test_153;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;_get_networks;return model_query.get_collection(context, models_v2.Network, dict_func=None, filters=filters, fields=fields, sorts=sorts, limit=limit, marker_obj=marker_obj, page_reverse=page_reverse);498
+Test_154;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;get_subnets_by_network;return [self._make_subnet_dict(subnet_db) for subnet_db in self._get_subnets_by_network(context, network_id)];1059
+Test_155;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_v2.py;NeutronDbPluginV2;create_network_db;return network;411
+Test_156;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/ipam_backend_mixin.py;IpamBackendMixin;_query_subnets_on_network;return query.filter((models_v2.Subnet.network_id == network_id));584
+Test_157;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/l3_db.py;L3_NAT_dbonly_mixin;_get_subnets_by_network_list;return {};1625
+Test_158;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/l3_db.py;L3_NAT_dbonly_mixin;_get_mtus_by_network_list;return {};1651
+Test_159;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/l3_db.py;L3_NAT_dbonly_mixin;_is_ipv4_network;return any(((s.ip_version == 4) for s in net.subnets));1233
+Test_160;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/l3_db.py;L3_NAT_dbonly_mixin;_get_mtus_by_network_list;return mtus_by_network;1658
+Test_161;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/objects/rbac_db.py;RbacNeutronDbObjectMixin;is_network_shared;return False;65
+Test_162;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;NetworkCache;get_network_by_id;return self.cache.get(network_id);639
+Test_163;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;NetworkCache;get_network_by_subnet_id;return self.cache.get(self.subnet_lookup.get(subnet_id));642
+Test_164;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;DhcpAgent;safe_get_network_info;return network;268
+Test_165;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;DhcpPluginApi;get_active_networks_info;return [dhcp.NetModel(n) for n in networks];573
+Test_166;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;NetworkCache;get_network_by_port_id;return self.cache.get(self.port_lookup.get(port_id));645
+Test_167;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;DhcpPluginApi;get_network_info;return dhcp.NetModel(network);581
+Test_168;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/dhcp/agent.py;NetworkCache;get_network_ids;return self.cache.keys();636
+Test_169;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/agent/metadata/agent.py;MetadataProxyHandler;_get_router_networks;return tuple((p['network_id'] for p in internal_ports));124
+Test_170;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/api/rpc/agentnotifiers/dhcp_rpc_agent_api.py;DhcpAgentNotifyAPI;_schedule_network;return (new_agents + existing_agents);111
+Test_171;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;get_network_info;return network;235
+Test_172;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;_get_active_networks;return nets;92
+Test_173;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/api/rpc/handlers/dhcp_rpc.py;DhcpRpcCallback;_group_by_network_id;return grouped;136
+Test_174;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;extend_network_dict_provider;return self.extend_networks_dict_provider(context, [network]);154
+Test_175;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;network_matches_filters;return any((self._match_segment(s, filters) for s in segments));143
+Test_176;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/managers.py;TypeManager;network_matches_filters;return True;135
+Test_177;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/driver_context.py;NetworkContext;network_segments;return self._segments;85
+Test_178;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/driver_context.py;PortContext;network;return self._network_context;197
+Test_179;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/mech_driver/mech_openvswitch.py;OpenvswitchMechanismDriver;get_allowed_network_types;return (agent['configurations'].get('tunnel_types', []) + [p_constants.TYPE_LOCAL, p_constants.TYPE_FLAT, p_constants.TYPE_VLAN]);68
+Test_180;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;filter_hosts_with_network_access;return self.mechanism_manager.filter_hosts_with_segment_access(context, segments, candidate_hosts, self.get_agents);1854
+Test_181;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;delete_network;return super(Ml2Plugin, self).delete_network(context, id);986
+Test_182;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_get_network_mtu;return (net_mtu or max_mtu);779
+Test_183;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_networks;return [db_utils.resource_fields(net, fields) for net in nets];963
+Test_184;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_create_network_db;return (result, mech_context);828
+Test_185;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;get_network;return db_utils.resource_fields(net_data, fields);941
+Test_186;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;create_network;return self._after_create_network(context, result, mech_context);835
+Test_187;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/plugin.py;Ml2Plugin;_after_create_network;return result;848
+Test_188;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/plugins/ml2/drivers/openvswitch/agent/ovs_neutron_agent.py;SinkHole;process_network_ports;return failed_devices;1713
+Test_189;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/scheduler/dhcp_agent_scheduler.py;DhcpFilter;_get_network_hostable_dhcp_agents;return {'n_agents';292
+Test_190;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/scheduler/dhcp_agent_scheduler.py;AutoScheduler;auto_schedule_networks;return True;101
+Test_191;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/scheduler/dhcp_agent_scheduler.py;DhcpFilter;_filter_agents_with_network_access;return reachable_agents;229
+Test_192;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/scheduler/dhcp_agent_scheduler.py;DhcpFilter;_get_network_hostable_dhcp_agents;return {'n_agents';271
+Test_193;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/address_scope_db.py;AddressScopeDbMixin;_extend_network_dict_address_scope;return network_res;137
+Test_194;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/notifiers/nova.py;Notifier;_get_network_changed_event;return {'name';88
+Test_195;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_common.py;DbBasePluginCommon;_get_network;return network;202
+Test_196;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_common.py;DbBasePluginCommon;_get_subnets_by_network;return subnet_qry.filter_by(network_id=network_id).all();237
+Test_197;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_common.py;DbBasePluginCommon;_make_network_dict;return db_utils.resource_fields(res, fields);279
+Test_198;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/db_base_plugin_common.py;DbBasePluginCommon;_is_network_shared;return False;289
+Test_199;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/vlantransparent_db.py;Vlantransparent_db_mixin;_extend_network_dict_vlan_transparent;return network_res;30
+Test_200;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/segments_db.py;None;get_networks_segments;return result;83
+Test_201;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/segments_db.py;None;get_network_segments;return get_networks_segments(context, [network_id], filter_dynamic)[network_id];65
+Test_202;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/external_net_db.py;External_net_db_mixin;_network_is_external;return net_obj.ExternalNetwork.objects_exist(context, network_id=net_id);83
+Test_203;OPENSTACK_WRONG_RETURN_VALUE-NETWORK;/neutron/db/external_net_db.py;None;_network_result_filter_hook;return query;62
