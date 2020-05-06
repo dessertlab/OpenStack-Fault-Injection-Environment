@@ -1,9 +1,9 @@
 # README 
 
 This repository contains a project related to the paper "`How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform`" accepted for presentation at the ESEC-FSE 2019 conference (doi>` 10.1145/3338906.3338916`). 
-The project includes tools to repeat the fault-injection experiments presented in the paper and the failure dataset including all faults and logs of our experiments.
+The project includes tools to repeat the fault-injection experiments presented in the paper.
 
-Please, **cite the following paper** if you use the tools and/or the dataset for your research:
+Please, **cite the following paper** if you use the tools for your research:
 
 ```
 @inproceedings{cotroneo2019bad,
@@ -26,7 +26,6 @@ Please, note that this artifact does not include a fault injection tool since we
 The diagram below provides the organization of the project:
 
 ```
-|-- ESECFSE19_paper_47.pdf  
 |-- INSTALL.md
 |-- LICENSE.md
 |-- README.md
@@ -34,11 +33,6 @@ The diagram below provides the organization of the project:
 |   -- Cinder.csv
 |   -- Neutron.csv
 |   -- Nova.csv
-|-- dataset
-|   -- Cinder
-|   -- Neutron
-|   -- Nova
-|   -- README.txt
 |-- results
 |-- src
 |   -- install
@@ -58,8 +52,7 @@ The diagram below provides the organization of the project:
 |       -- start_workload.sh
 ```
 
-The `data` directory contains the CSV files related to each OpenStack sub-system (i.e., Nova.csv, Cinder.csv, Neutron.csv). Each CSV file describes the all 
-the information about each test case.
+The `data` directory contains the CSV files related to each OpenStack sub-system (i.e., Nova.csv, Cinder.csv, Neutron.csv). Each CSV file describes the all the information about each test case.
 Specifically, the CSV files have the following fields:
 
 *  **Test_id**: It is the name of the folder that contains the specific test, where **id** is an increasing number used to differentiate the tests;
@@ -71,7 +64,7 @@ Specifically, the CSV files have the following fields:
 *  **Line**: It is the line of the **Fault_Location** in the **Target_Component**.
 
 
-The `dataset` directory contains the **failure dataset**. It includes the raw logs from fault injection experiments in OpenStack. The tests are grouped per injected sub-system (i.e., Nova, Cinder, and Neutron). There is a total of 480 tests: 231 for Nova, 125 for Cinder, and 124 for Neutron. The log of each experiment is saved in a folder named "Test_id", where "id" is an incremental number that identifies the test. See the `README.txt` file in the `dataset` directory for more details about the dataset.
+<!-- The `dataset` directory contains the **failure dataset**. It includes the raw logs from fault injection experiments in OpenStack. The tests are grouped per injected sub-system (i.e., Nova, Cinder, and Neutron). There is a total of 480 tests: 231 for Nova, 125 for Cinder, and 124 for Neutron. The log of each experiment is saved in a folder named "Test_id", where "id" is an incremental number that identifies the test. See the `README.txt` file in the `dataset` directory for more details about the dataset. -->
 
 The `results` directory contains data generated during analysis. 
 
