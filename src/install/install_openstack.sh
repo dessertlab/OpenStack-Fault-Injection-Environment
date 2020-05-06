@@ -47,7 +47,13 @@ rm -rf ${SRC_DIR}/packstack_configuration.txt
 
 echo_time "Install packstack and openstack related tools"
 
-yum install -y centos-release-openstack-pike > /dev/null
+yum install centos-release-qemu-ev -y
+yum install qemu-kvm-ev -y
+
+yum install -y yum-utils
+yum-config-manager --add-repo=http://vault.centos.org/7.3.1611/cloud/x86_64/openstack-pike
+echo "gpgcheck=0" >> /etc/yum.repos.d/vault.centos.org_7.3.1611_cloud_x86_64_openstack-pike.repo
+
 sleep 1
 yum install -y openstack-packstack > /dev/null
 sleep 1
