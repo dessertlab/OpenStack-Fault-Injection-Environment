@@ -68,6 +68,18 @@ After the installation is complete, the script checks whether the OpenStack envi
 
 ## 2. Run fault injection test cases
 
+### 2.1 [Optional] Run fault-free execution
+
+Before performing the fault-injection experiments, you can check if the system is able the execute the workload without errors. Thus, you can execute the ``run_ff.sh`` by running the following:
+
+```
+[user@domain ARTIFACT_PATH]$ sudo ./src/run_ff.sh
+```
+
+This script executes the workload without any injected fault (**fault-free execution**). The logs of the workload during the fault-free execution will be saved in the directory `ARTIFACT_PATH/results/FF` at the end of the script execution.
+
+### 2.2 Run fault-injection experiments
+
 In order to run a single test case, you need to choose both the sub-system name (i.e., Nova, Cinder, Neutron) and the **id** of the test you want to execute. 
 
 You can execute the ``run_test.sh`` script in interactive mode by running the following:
