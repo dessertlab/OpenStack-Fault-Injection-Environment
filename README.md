@@ -64,8 +64,6 @@ Specifically, the CSV files have the following fields:
 *  **Line**: It is the line of the **Fault_Location** in the **Target_Component**.
 
 
-<!-- The `dataset` directory contains the **failure dataset**. It includes the raw logs from fault injection experiments in OpenStack. The tests are grouped per injected sub-system (i.e., Nova, Cinder, and Neutron). There is a total of 480 tests: 231 for Nova, 125 for Cinder, and 124 for Neutron. The log of each experiment is saved in a folder named "Test_id", where "id" is an incremental number that identifies the test. See the `README.txt` file in the `dataset` directory for more details about the dataset. -->
-
 The `results` directory contains data generated during analysis. 
 
 The `src` directory contains all of the code written for the project, including the scripts needed
