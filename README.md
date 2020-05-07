@@ -40,6 +40,7 @@ The diagram below provides the organization of the project:
 |       -- install_openstack.sh
 |       -- prepare_packstack_config_file.sh
 |       -- packstack_configuration_template.txt
+|   -- run_ff.sh
 |   -- run_test.sh
 |   -- statistic.sh
 |   -- tests
