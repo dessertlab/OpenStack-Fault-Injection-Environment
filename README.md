@@ -1,6 +1,6 @@
 # README 
 
-This repository contains a project related to the paper "`How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform`" accepted for presentation at the ESEC-FSE 2019 conference (doi>` 10.1145/3338906.3338916`). 
+This repository contains a project related to the paper [How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform](https://dl.acm.org/doi/10.1145/3338906.3338916) accepted for presentation at the ESEC-FSE 2019 conference. 
 The project includes tools to repeat the fault-injection experiments presented in the paper.
 
 Please, **cite the following paper** if you use the tools for your research:
