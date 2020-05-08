@@ -27,7 +27,7 @@ The diagram below provides the organization of the project:
 
 ```
 |-- INSTALL.md
-|-- LICENSE.md
+|-- LICENSE
 |-- README.md
 |-- data
 |   -- Cinder.csv
