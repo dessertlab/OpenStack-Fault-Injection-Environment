@@ -17,7 +17,7 @@ Please, **cite the following paper** if you use the tools for your research:
 
 
 
-Please, note that this artifact does not include a fault injection tool since we transferred the ownership of the tool to our industry partners. Therefore, the artifact includes pre-injected source-code files. Before every fault injection test, an original source-code file is replaced with a pre-injected file, and it is restored after the test.
+Please, note that this artifact does not include a fault injection tool since we transferred the ownership to our industry partners. Therefore, the artifact includes pre-injected source-code files. Before every fault injection test, an original source-code file is replaced with a pre-injected file, and it is restored after the test.
 
 
 
