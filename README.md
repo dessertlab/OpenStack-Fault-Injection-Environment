@@ -65,7 +65,7 @@ Specifically, the CSV files have the following fields:
 *  **Line**: It is the line of the **Fault_Location** in the **Target_Component**.
 
 
-The `results` directory contains data generated during analysis. 
+The `results` directory will contain data generated during analysis. 
 
 The `src` directory contains all of the code written for the project, including the scripts needed
 for the installation of OpenStack (`src/install` sub-directory; see `INSTALL.md` file), the scripts used to execute the workload (`src/workload` sub-directory) and for analyzing 
