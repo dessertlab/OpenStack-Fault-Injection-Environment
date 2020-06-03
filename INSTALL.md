@@ -20,7 +20,7 @@ We recommend using a RedHat-based OS, such as CentOS Linux since the Packstack t
 You can download the CentOS Linux release 7.6.1810 [here](http://isoredirect.centos.org/centos/7/isos/x86_64/).
 You can install CentOS by following the wizard and by setting the default parameters. For any issues, you can refer to the official installation guide at https://docs.centos.org/en-US/centos/install-guide/.
 
-Alternatively, you can download a virtual disk with a pre-configured CentOS 7.6.810 installation for VMware or Virtualbox, from: 
+Alternatively, you can download a virtual disk with a pre-configured CentOS 7.6.1810 installation for VMware or Virtualbox, from: 
 
 **VMware**: https://sourceforge.net/projects/osboxes/files/v/vm/10-Cn-t/7/7-18.10/18-1064.7z/download
 
