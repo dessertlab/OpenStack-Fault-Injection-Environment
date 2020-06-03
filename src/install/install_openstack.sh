@@ -64,7 +64,8 @@ sleep 1
 yum install -y openstack-utils --nogpgcheck  > /dev/null
 sleep 1
 
-#sudo yum downgrade leatherman
+# Decomment in case of error:
+# sudo yum downgrade leatherman
 
 #prepare packstack config file
 
