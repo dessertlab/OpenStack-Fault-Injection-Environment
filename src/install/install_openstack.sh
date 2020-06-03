@@ -66,7 +66,7 @@ sleep 1
 
 #sudo yum downgrade leatherman
 
-#prepare packsta config file
+#prepare packstack config file
 
 echo_time "Prepare packstack configuration file"
 ${SRC_DIR}/prepare_packstack_config_file.sh
