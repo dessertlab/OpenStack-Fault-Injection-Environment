@@ -64,6 +64,8 @@ sleep 1
 yum install -y openstack-utils --nogpgcheck  > /dev/null
 sleep 1
 
+#sudo yum downgrade leatherman
+
 #prepare packsta config file
 
 echo_time "Prepare packstack configuration file"
