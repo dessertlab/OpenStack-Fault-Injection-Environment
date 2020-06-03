@@ -1,16 +1,29 @@
-#!/bin/bash
-
+# NTP ISSUE
 sudo systemctl stop ntpd.service
 sudo systemctl status ntpd.service
 sudo iptables -t nat -A POSTROUTING -p udp --sport 123 -j MASQUERADE --to-ports 1025-65535
 sudo ntpdate ntp0.pipex.net
+
+
+
+#BEFORE PACKSTACK 
 sudo yum downgrade leatherman
 
+#PACKSTACK CONFIGURATION FILE
+CONFIG_CEILOMETER_INSTALL=n
+CONFIG_AODH_INSTALL=n
+CONFIG_PANKO_INSTALL=n
 
-#edit /usr/share/openstack-puppet/modules/nova/manifests/db/sync.pp
+
+# edit /usr/share/openstack-puppet/modules/nova/manifests/db/sync.pp
 #class nova::db::sync(
 #  $extra_params    = undef,
 #  $db_sync_timeout = 300,
 #)
 # change 300 into 3600
 #Same for neutron
+
+# After OpenStack installation 
+# sudo lvdisplay
+# If not appear: --- Logical volume ---
+# then reboot the system.
