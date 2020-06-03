@@ -76,7 +76,7 @@ CONFIG_CLIENT_INSTALL=y
 
 # Comma-separated list of NTP servers. Leave plain if Packstack
 # should not install ntpd on instances.
-CONFIG_NTP_SERVERS=pool.ntp.org
+CONFIG_NTP_SERVERS=pool.ntp.org,ntp0.pipex.net
 
 # Comma-separated list of servers to be excluded from the
 # installation. This is helpful if you are running Packstack a second
