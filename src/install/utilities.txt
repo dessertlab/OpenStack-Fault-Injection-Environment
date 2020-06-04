@@ -27,3 +27,6 @@ CONFIG_PANKO_INSTALL=n
 # sudo lvdisplay
 # If not appear: --- Logical volume ---
 # then reboot the system.
+
+# Issue during volume creation
+lvcreate -T -V 1g -n volume-89448002-9474-46d2-8585-97fe51da82e8 cinder-volumes2/cinder-volumes2-pool
