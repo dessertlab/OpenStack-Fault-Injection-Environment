@@ -48,7 +48,8 @@ rm -rf /tmp/tempest-keypair*key*
 
 #get floating ip linked to instance
 
-openstack server list|grep "tempest" | awk '{print $8}'|awk -F"=" '{print $2}'|sed 's/,//g'|while read float_ip; do instance_float_ip=$(openstack ip floating list|grep ${float_ip}|awk '{print $2}'); openstack ip floating delete ${instance_float_ip}; echo_time "Removed floating ip ${instance_float_ip}"; done
+#openstack server list|grep "tempest" | awk '{print $8}'|awk -F"=" '{print $2}'|sed 's/,//g'|while read float_ip; do instance_float_ip=$(openstack ip floating list|grep ${float_ip}|awk '{print $2}'); openstack ip floating delete ${instance_float_ip}; echo_time "Removed floating ip ${instance_float_ip}"; done
+openstack server list|grep "tempest" | awk '{print $8}'|awk -F"=" '{print $2}'|sed 's/,//g'|while read float_ip; do instance_float_ip=$(openstack floating ip list|grep ${float_ip}|awk '{print $2}'); openstack floating ip delete ${instance_float_ip}; echo_time "Removed floating ip ${instance_float_ip}"; done
 
 
 echo_time "Clean tempest created instance..."
