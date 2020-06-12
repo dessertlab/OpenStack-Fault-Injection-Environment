@@ -647,7 +647,8 @@ echo_time "Start resources cleanup" >> $STD_OUT_FILE
 
 source $WL_DIR/${keystonrc_file_name}
 
-launch_and_check "openstack ip floating delete ${WORKLOAD_FLOATING_IP}"
+#launch_and_check "openstack ip floating delete ${WORKLOAD_FLOATING_IP}"
+launch_and_check "openstack floating ip delete ${WORKLOAD_FLOATING_IP}"
 echo_time "Removed floating ip ${WORKLOAD_FLOATING_IP}" >> $STD_OUT_FILE
 
 source $WL_DIR/${admin_keystonrc_file_name}
