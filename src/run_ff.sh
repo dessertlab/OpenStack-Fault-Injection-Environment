@@ -45,7 +45,9 @@ $WORKLOAD_DIR/restart_system.sh
 
 #cleanup
 echo_time "Cleaning up system...";
-$WORKLOAD_DIR/cleanup.sh  
+$WORKLOAD_DIR/cleanup.sh
+rm -rf $WORKLOAD_DIR/.admin_keystonrc_tempest*
+rm -rf $WORKLOAD_DIR/.keystonerc_tempest-*
 
 
 
