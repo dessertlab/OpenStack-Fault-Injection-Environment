@@ -233,7 +233,8 @@ echo_time "Cleaning up system..." | tee -a $RESULTS_DIR/run_test.log;
 $WORKLOAD_DIR/cleanup.sh  2>&1 >> $RESULTS_DIR/run_test.log &
 PID=$!
 stop_handler
-
+rm -rf $WORKLOAD_DIR/.admin_keystonrc_tempest*
+rm -rf $WORKLOAD_DIR/.keystonerc_tempest-*
 
 
 #flush OpenStack logs
