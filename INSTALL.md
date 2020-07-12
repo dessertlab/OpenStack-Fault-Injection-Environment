@@ -119,7 +119,10 @@ The output of a test is saved into `ARTIFACT_PATH/results/SUBSYSTEM_NAME/Test_ID
 
 *   The file `fp_info.data`, which contains information about the fault injected in the experiment.
 
-*   The `logs` subdirectory, which contains the raw logs of the execution of the test case.
+*   The `logs` subdirectory, which contains the raw logs of the execution of the test case (when the injection is enabled).
+
+*   The `round_2` subdirectory, which contains the raw logs of the execution of the test case after the fault-removal (to verify any persistent errors in the system).
+
 
 In the `logs` subdirectory, there are more subfolders representing all the sub-systems of OpenStack (e.g., "nova", "cinder", "neutron", "glance", etc.) containing the log messages generated during the tests.
 
