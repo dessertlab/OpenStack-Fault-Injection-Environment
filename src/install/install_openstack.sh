@@ -51,11 +51,15 @@ yum install centos-release-qemu-ev -y --nogpgcheck
 yum install qemu-kvm-ev -y --nogpgcheck 
 
 yum install -y yum-utils --nogpgcheck 
+
+yum-config-manager --add-repo=http://vault.centos.org/7.6.1810/cloud/x86_64/openstack-pike
+echo "gpgcheck=0" >> /etc/yum.repos.d/vault.centos.org_7.6.1810_cloud_x86_64_openstack-pike.repo
+
 #yum-config-manager --add-repo=http://vault.centos.org/7.3.1611/cloud/x86_64/openstack-pike
 #echo "gpgcheck=0" >> /etc/yum.repos.d/vault.centos.org_7.3.1611_cloud_x86_64_openstack-pike.repo
 
-yum-config-manager --add-repo=https://buildlogs.centos.org/centos/7/cloud/x86_64/openstack-pike
-echo "gpgcheck=0" >> /etc/yum.repos.d/buildlogs.centos.org_centos_7_cloud_x86_64_openstack-pike.repo
+#yum-config-manager --add-repo=https://buildlogs.centos.org/centos/7/cloud/x86_64/openstack-pike
+#echo "gpgcheck=0" >> /etc/yum.repos.d/buildlogs.centos.org_centos_7_cloud_x86_64_openstack-pike.repo
 
 
 sleep 1
