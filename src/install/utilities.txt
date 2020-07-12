@@ -5,6 +5,10 @@ sudo iptables -t nat -A POSTROUTING -p udp --sport 123 -j MASQUERADE --to-ports 
 sudo ntpdate ntp0.pipex.net
 
 
+# DISABLE Default Repo
+Edit: /etc/yum.repos.d/CentOS-OpenStack-rocky.repo
+set all enbled = 0
+
 
 #BEFORE PACKSTACK 
 sudo yum downgrade leatherman
@@ -15,6 +19,16 @@ CONFIG_AODH_INSTALL=n
 CONFIG_PANKO_INSTALL=n
 
 
+# After OpenStack installation, reboot the system
+# sudo lvdisplay
+# If not appear: --- Logical volume ---
+# then reboot again the system.
+
+# Issue during volume creation
+lvcreate -T -V 1g -n volume-89448002-9474-46d2-8585-97fe51da82e8 cinder-volumes2/cinder-volumes2-pool
+
+
+
 # edit /usr/share/openstack-puppet/modules/nova/manifests/db/sync.pp
 #class nova::db::sync(
 #  $extra_params    = undef,
@@ -22,11 +36,3 @@ CONFIG_PANKO_INSTALL=n
 #)
 # change 300 into 3600
 #Same for neutron
-
-# After OpenStack installation 
-# sudo lvdisplay
-# If not appear: --- Logical volume ---
-# then reboot the system.
-
-# Issue during volume creation
-lvcreate -T -V 1g -n volume-89448002-9474-46d2-8585-97fe51da82e8 cinder-volumes2/cinder-volumes2-pool
