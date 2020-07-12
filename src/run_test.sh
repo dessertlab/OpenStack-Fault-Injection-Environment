@@ -277,7 +277,63 @@ cp $WORKLOAD_DIR/.workload.err $RESULTS_DIR/$component/$test/logs/workload.err
 cp $TESTS_DIR/$component/$test/fip_info.data $RESULTS_DIR/$component/$test/
 
 
-#restore
-restore
+echo_time "Restoring original file..." | tee -a $RESULTS_DIR/run_test.log;
+rm -rf $target
+mv $backup $target
+ls ${target_pyo}".old" > /dev/null 2>&1;
+if [ $? -eq 0 ]; then
+        mv ${target_pyo}".old" ${target_pyo};
+fi
+python -m compileall $target
+
+# restore
+
+# Second round of execution
+
+echo_time "Second round execution (after fault-removal)" | tee -a $RESULTS_DIR/run_test.log;
+mkdir -p $RESULTS_DIR/$component/$test/round_2/logs/
+
+#flush OpenStack logs
+truncate -s 0  /var/log/nova/*.log
+truncate -s 0 /var/log/cinder/*.log
+truncate -s 0 /var/log/neutron/*.log
+truncate -s 0 /var/log/heat/*.log
+truncate -s 0 /var/log/keystone/*.log
+truncate -s 0 /var/log/glance/*.log
+
+
+
+#Workload execution
+echo_time "Workload execution..." | tee -a $RESULTS_DIR/run_test.log;
+echo_time "The workload execution can last tens of minutes. Please, do not terminate the execution until the completion ..." | tee -a $RESULTS_DIR/run_test.log;
+#IMAGE_FILE=$WORKLOAD_DIR/"cirros-0.4.0-x86_64-disk.img"; #the image file used during the workload execution
+$WORKLOAD_DIR/start_workload.sh $IMAGE_FILE 2>&1 >> $RESULTS_DIR/run_test.log &
+PID=$!
+stop_handler
+
+echo_time "Workload is completed!" | tee -a $RESULTS_DIR/run_test.log;
+
+#Save OpenStack logs
+echo_time "Saving OpenStack logs..." | tee -a $RESULTS_DIR/run_test.log;
+for service in ${Services[@]}; do
+        mkdir $RESULTS_DIR/$component/$test/round_2/logs/$service
+        cp -r /var/log/$service/*.log $RESULTS_DIR/$component/$test/round_2/logs/$service/
+done
+
+unset Services
+
+
+#Save workload logs
+echo_time "Saving workload logs..." | tee -a $RESULTS_DIR/run_test.log;
+cp $WORKLOAD_DIR/.workload.out $RESULTS_DIR/$component/$test/round_2/logs/workload.out
+cp $WORKLOAD_DIR/.workload.err $RESULTS_DIR/$component/$test/round_2/logs/workload.err
+
+
+#restart
+echo_time "Restarting system..." | tee -a $RESULTS_DIR/run_test.log;
+$WORKLOAD_DIR/restart_system.sh 2>&1  >> $RESULTS_DIR/run_test.log &
+PID=$!
+stop_handler
+
 
 echo_time "Test completed!" | tee -a $RESULTS_DIR/run_test.log;
