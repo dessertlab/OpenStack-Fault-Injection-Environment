@@ -121,8 +121,6 @@ The output of a test is saved into `ARTIFACT_PATH/results/SUBSYSTEM_NAME/Test_ID
 
 *   The `logs` subdirectory, which contains the raw logs of the execution of the test case (when the injection is enabled).
 
-*   The `round_2` subdirectory, which contains the raw logs of the execution of the test case after the fault-removal (to verify any persistent errors in the system).
-
 
 In the `logs` subdirectory, there are more subfolders representing all the sub-systems of OpenStack (e.g., "nova", "cinder", "neutron", "glance", etc.) containing the log messages generated during the tests.
 
@@ -150,7 +148,7 @@ of the volume (`API ERROR:  openstack server add volume`), about three minutes l
 #### 3.1 Statistics of the test cases
 
 After executing the fault injection experiments, you can analyze the experiments by running the script `ARTIFACT_PATH/src/statistic.sh`. 
-The script computes the number of experiments in which there is at least one failure occurred during the **faulty execution** of the workload.
+The script computes the number of experiments in which there is at least one failure occurred during the execution of the workload.
 Moreover, the script classifies the failures of the failed experiments into "API Error Only", "Assertion Failure Only" and 
 "Assertion failure followed by API Error" (as described in the paper).
 
