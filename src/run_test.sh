@@ -217,6 +217,16 @@ if [ $? -eq 0 ]; then
 	mv $target_pyo ${target_pyo}".old"
 fi
 
+#cleanup
+echo_time "Cleaning up system..." | tee -a $RESULTS_DIR/run_test.log;
+$WORKLOAD_DIR/cleanup.sh  2>&1 >> $RESULTS_DIR/run_test.log &
+PID=$!
+stop_handler
+rm -rf $WORKLOAD_DIR/.admin_keystonrc_tempest*
+rm -rf $WORKLOAD_DIR/.keystonerc_tempest*
+rm -rf $WORKLOAD_DIR/tempest-keypair*
+
+
 #fault injection
 echo_time "Fault injection!" | tee -a $RESULTS_DIR/run_test.log;
 cp $TESTS_DIR/$component/$test/mutated_file $target;
@@ -228,14 +238,7 @@ $WORKLOAD_DIR/restart_system.sh 2>&1  >> $RESULTS_DIR/run_test.log &
 PID=$!
 stop_handler
 
-#cleanup
-echo_time "Cleaning up system..." | tee -a $RESULTS_DIR/run_test.log;
-$WORKLOAD_DIR/cleanup.sh  2>&1 >> $RESULTS_DIR/run_test.log &
-PID=$!
-stop_handler
-rm -rf $WORKLOAD_DIR/.admin_keystonrc_tempest*
-rm -rf $WORKLOAD_DIR/.keystonerc_tempest*
-rm -rf $WORKLOAD_DIR/tempest-keypair*
+
 
 
 #flush OpenStack logs
