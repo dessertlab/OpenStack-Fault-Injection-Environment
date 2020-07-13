@@ -150,7 +150,7 @@ of the volume (`API ERROR:  openstack server add volume`), about three minutes l
 #### 3.1 Statistics of the test cases
 
 After executing the fault injection experiments, you can analyze the experiments by running the script `ARTIFACT_PATH/src/statistic.sh`. 
-The script computes the number of experiments in which there is at least one failure occurred during the execution of the workload.
+The script computes the number of experiments in which there is at least one failure occurred during the **faulty execution** of the workload.
 Moreover, the script classifies the failures of the failed experiments into "API Error Only", "Assertion Failure Only" and 
 "Assertion failure followed by API Error" (as described in the paper).
 
