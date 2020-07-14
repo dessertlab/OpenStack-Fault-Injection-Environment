@@ -204,6 +204,17 @@ fi
 
 trap "" SIGINT SIGTERM SIGTSTP
 
+
+#cleanup
+echo_time "Cleaning up system..." | tee -a $RESULTS_DIR/run_test.log;
+$WORKLOAD_DIR/cleanup.sh  2>&1 >> $RESULTS_DIR/run_test.log &
+PID=$!
+stop_handler
+rm -rf $WORKLOAD_DIR/.admin_keystonrc_tempest*
+rm -rf $WORKLOAD_DIR/.keystonerc_tempest*
+rm -rf $WORKLOAD_DIR/tempest-keypair*
+
+
 #backup
 echo_time "Backup of the target file" |  tee -a $RESULTS_DIR/run_test.log;
 backup=$target".old" 
@@ -216,16 +227,6 @@ ls ${target_pyo} > /dev/null 2>&1;
 if [ $? -eq 0 ]; then
 	mv $target_pyo ${target_pyo}".old"
 fi
-
-#cleanup
-echo_time "Cleaning up system..." | tee -a $RESULTS_DIR/run_test.log;
-$WORKLOAD_DIR/cleanup.sh  2>&1 >> $RESULTS_DIR/run_test.log &
-PID=$!
-stop_handler
-rm -rf $WORKLOAD_DIR/.admin_keystonrc_tempest*
-rm -rf $WORKLOAD_DIR/.keystonerc_tempest*
-rm -rf $WORKLOAD_DIR/tempest-keypair*
-
 
 #fault injection
 echo_time "Fault injection!" | tee -a $RESULTS_DIR/run_test.log;
