@@ -68,6 +68,15 @@ sleep 1
 yum install -y openstack-utils --nogpgcheck  > /dev/null
 sleep 1
 
+echo_time "Disable firewalld, NetworkManager and enable network module"
+
+systemctl disable firewalld
+systemctl stop firewalld
+systemctl disable NetworkManager
+systemctl stop NetworkManager
+systemctl enable network
+systemctl start network
+
 # Decomment in case of error:
 # sudo yum downgrade leatherman
 
