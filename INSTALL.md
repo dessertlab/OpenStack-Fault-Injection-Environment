@@ -34,18 +34,6 @@ To use these pre-configured images, you need to uncompress the 7z archive, creat
 In order to install an OpenStack environment in an easy way, you can use **Packstack** (https://www.rdoproject.org/install/packstack/), which is a set of facilities and tools for creating an all-in-one installation.
 
 
-The Packstack installation guide recommends to disable the *NetworkManager* and *firewalld* services in order not to generate conflicts with OpenStack networking.
-
-```
-[user@domain ]$ sudo systemctl disable firewalld
-[user@domain ]$ sudo systemctl stop firewalld
-[user@domain ]$ sudo systemctl disable NetworkManager
-[user@domain ]$ sudo systemctl stop NetworkManager
-[user@domain ]$ sudo systemctl enable network
-[user@domain ]$ sudo systemctl start network
-````
-
-
 Our script ``install_openstack.sh`` contains commands for automatically installing all dependencies, and for preparing a Packstack configuration file according to the local network configuration.
 Assuming that `ARTIFACT_PATH` is the directory in which you unzip the artifact sources, run the following command to create an all-in-one OpenStack environment:
 
