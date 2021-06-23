@@ -43,11 +43,11 @@ CONFIG_SWIFT_INSTALL=y
 # Specify 'y' to install OpenStack Metering (ceilometer). Note this
 # will also automatically install gnocchi service and configures it as
 # the metrics backend. ['y', 'n']
-CONFIG_CEILOMETER_INSTALL=y
+CONFIG_CEILOMETER_INSTALL=n
 
 # Specify 'y' to install OpenStack Telemetry Alarming (Aodh). Note
 # Aodh requires Ceilometer to be installed as well. ['y', 'n']
-CONFIG_AODH_INSTALL=y
+CONFIG_AODH_INSTALL=n
 
 # Specify 'y' to install OpenStack Events Service (panko). ['y', 'n']
 CONFIG_PANKO_INSTALL=n
