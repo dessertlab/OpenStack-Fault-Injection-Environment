@@ -372,7 +372,7 @@ check_active_instance(){
 check_volume_creation(){
 
     	status=1
-	wait_time=60
+	wait_time=240
 	volume_status="unknown"
 
  	sleep ${wait_time}
